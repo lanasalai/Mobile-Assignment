@@ -24,10 +24,10 @@
 		D4C6961E2DAAAB6E006604BC /* URLRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6961D2DAAAB6E006604BC /* URLRequestProvider.swift */; };
 		D4C696222DAAACDC006604BC /* PortfolioURLRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */; };
 		D4C696242DAABC38006604BC /* RemotePortfolioPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696232DAABC38006604BC /* RemotePortfolioPublisher.swift */; };
-		D4C696282DAADD61006604BC /* MutablePortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696272DAADD61006604BC /* MutablePortfolio.swift */; };
-		D4C6962A2DAAFAD9006604BC /* MutableBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696292DAAFAD9006604BC /* MutableBalance.swift */; };
-		D4C6962C2DAAFB18006604BC /* MutablePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6962B2DAAFB18006604BC /* MutablePosition.swift */; };
-		D4C6962E2DAAFB3B006604BC /* MutableInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6962D2DAAFB3B006604BC /* MutableInstrument.swift */; };
+		D4C696282DAADD61006604BC /* ManipulatedPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696272DAADD61006604BC /* ManipulatedPortfolio.swift */; };
+		D4C6962A2DAAFAD9006604BC /* ManipulatedBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696292DAAFAD9006604BC /* ManipulatedBalance.swift */; };
+		D4C6962C2DAAFB18006604BC /* ManipulatedPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6962B2DAAFB18006604BC /* ManipulatedPosition.swift */; };
+		D4C6962E2DAAFB3B006604BC /* ManipulatedInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6962D2DAAFB3B006604BC /* ManipulatedInstrument.swift */; };
 		D4C696342DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */; };
 		D4C696372DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696362DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift */; };
 		D4C696392DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696382DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift */; };
@@ -64,10 +64,10 @@
 		D4C6961D2DAAAB6E006604BC /* URLRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestProvider.swift; sourceTree = "<group>"; };
 		D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioURLRequestProvider.swift; sourceTree = "<group>"; };
 		D4C696232DAABC38006604BC /* RemotePortfolioPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioPublisher.swift; sourceTree = "<group>"; };
-		D4C696272DAADD61006604BC /* MutablePortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutablePortfolio.swift; sourceTree = "<group>"; };
-		D4C696292DAAFAD9006604BC /* MutableBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableBalance.swift; sourceTree = "<group>"; };
-		D4C6962B2DAAFB18006604BC /* MutablePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutablePosition.swift; sourceTree = "<group>"; };
-		D4C6962D2DAAFB3B006604BC /* MutableInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableInstrument.swift; sourceTree = "<group>"; };
+		D4C696272DAADD61006604BC /* ManipulatedPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulatedPortfolio.swift; sourceTree = "<group>"; };
+		D4C696292DAAFAD9006604BC /* ManipulatedBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulatedBalance.swift; sourceTree = "<group>"; };
+		D4C6962B2DAAFB18006604BC /* ManipulatedPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulatedPosition.swift; sourceTree = "<group>"; };
+		D4C6962D2DAAFB3B006604BC /* ManipulatedInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulatedInstrument.swift; sourceTree = "<group>"; };
 		D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioDataSourceImpl.swift; sourceTree = "<group>"; };
 		D4C696362DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioSimplePublisher.swift; sourceTree = "<group>"; };
 		D4C696382DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioSimulatedServicePublisher.swift; sourceTree = "<group>"; };
@@ -239,10 +239,10 @@
 		D4C696262DAADD4C006604BC /* Mutable */ = {
 			isa = PBXGroup;
 			children = (
-				D4C696272DAADD61006604BC /* MutablePortfolio.swift */,
-				D4C696292DAAFAD9006604BC /* MutableBalance.swift */,
-				D4C6962B2DAAFB18006604BC /* MutablePosition.swift */,
-				D4C6962D2DAAFB3B006604BC /* MutableInstrument.swift */,
+				D4C696272DAADD61006604BC /* ManipulatedPortfolio.swift */,
+				D4C696292DAAFAD9006604BC /* ManipulatedBalance.swift */,
+				D4C6962B2DAAFB18006604BC /* ManipulatedPosition.swift */,
+				D4C6962D2DAAFB3B006604BC /* ManipulatedInstrument.swift */,
 			);
 			path = Mutable;
 			sourceTree = "<group>";
@@ -376,7 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4C696282DAADD61006604BC /* MutablePortfolio.swift in Sources */,
+				D4C696282DAADD61006604BC /* ManipulatedPortfolio.swift in Sources */,
 				D4C696162DAA9E09006604BC /* RemotePosition.swift in Sources */,
 				D4C696122DAA9C0C006604BC /* RemotePortfolio.swift in Sources */,
 				D4C695C92DAA866D006604BC /* ViewController.swift in Sources */,
@@ -389,14 +389,14 @@
 				D4C695C52DAA866D006604BC /* AppDelegate.swift in Sources */,
 				D4C696222DAAACDC006604BC /* PortfolioURLRequestProvider.swift in Sources */,
 				D4C696182DAA9E20006604BC /* RemoteInstrument.swift in Sources */,
-				D4C6962C2DAAFB18006604BC /* MutablePosition.swift in Sources */,
+				D4C6962C2DAAFB18006604BC /* ManipulatedPosition.swift in Sources */,
 				D4C696372DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift in Sources */,
 				D4C696342DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift in Sources */,
 				D4C696012DAA8E29006604BC /* HTTPClient.swift in Sources */,
 				D4C6961E2DAAAB6E006604BC /* URLRequestProvider.swift in Sources */,
-				D4C6962E2DAAFB3B006604BC /* MutableInstrument.swift in Sources */,
+				D4C6962E2DAAFB3B006604BC /* ManipulatedInstrument.swift in Sources */,
 				D4C695C72DAA866D006604BC /* SceneDelegate.swift in Sources */,
-				D4C6962A2DAAFAD9006604BC /* MutableBalance.swift in Sources */,
+				D4C6962A2DAAFAD9006604BC /* ManipulatedBalance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

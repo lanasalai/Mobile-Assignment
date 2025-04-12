@@ -1,11 +1,11 @@
 //
-//  MutableInstrument.swift
+//  ManipulatedInstrument.swift
 //  MyPortfolio
 //
 //  Created by Lana Salai on 12.4.25..
 //
 
-struct MutableInstrument {
+struct ManipulatedInstrument {
     let ticker: String
     let name: String
     let exchange: String
@@ -13,7 +13,7 @@ struct MutableInstrument {
     var lastTradedPrice: Double
 }
 
-extension MutableInstrument {
+extension ManipulatedInstrument {
     func toRemote() -> RemoteInstrument {
         RemoteInstrument(ticker: self.ticker,
                          name: self.name,

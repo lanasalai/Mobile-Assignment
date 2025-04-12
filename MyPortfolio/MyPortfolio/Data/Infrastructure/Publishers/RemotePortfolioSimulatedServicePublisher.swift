@@ -31,21 +31,21 @@ class RemotePortfolioSimulatedServicePublisher: RemotePortfolioPublisher {
         timer = Timer.publish(every: 3.0, on: .main, in: .common)
             .autoconnect()
             .sink(receiveValue: { _ in
-                let manipulatedPortfolio = initial.toMutable()
+                let manipulatedPortfolio = initial.manipulate()
                 self.subject.send(manipulatedPortfolio.toRemote())
             })
     }
 }
 
 private extension RemotePortfolio {
-    func toMutable() -> MutablePortfolio {
-        MutablePortfolio(positions: positions.map { $0.toMutable() })
+    func manipulate() -> ManipulatedPortfolio {
+        ManipulatedPortfolio(positions: positions.map { $0.manipulate() })
     }
 }
 
 private extension RemotePosition {
-    func toMutable() -> MutablePosition {
-        MutablePosition(instrument: instrument.toMutable(),
+    func manipulate() -> ManipulatedPosition {
+        ManipulatedPosition(instrument: instrument.manipulate(),
                         quantity: quantity,
                         averagePrice: averagePrice,
                         cost: cost)
@@ -53,9 +53,9 @@ private extension RemotePosition {
 }
 
 private extension RemoteInstrument {
-    func toMutable() -> MutableInstrument {
+    func manipulate() -> ManipulatedInstrument {
         let newTradedPrice = lastTradedPrice * (1.0 + (Bool.random() ? -0.1 : 0.1))
-        return MutableInstrument(ticker: ticker,
+        return ManipulatedInstrument(ticker: ticker,
                                  name: name,
                                  exchange: exchange,
                                  currency: currency,

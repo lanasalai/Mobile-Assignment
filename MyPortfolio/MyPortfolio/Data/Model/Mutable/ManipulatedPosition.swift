@@ -1,12 +1,12 @@
 //
-//  MutablePosition.swift
+//  ManipulatedPosition.swift
 //  MyPortfolio
 //
 //  Created by Lana Salai on 12.4.25..
 //
 
-struct MutablePosition {
-    let instrument: MutableInstrument
+struct ManipulatedPosition {
+    let instrument: ManipulatedInstrument
     let quantity: Double
     let averagePrice: Double
     let cost: Double
@@ -21,7 +21,7 @@ struct MutablePosition {
     }
 }
 
-extension MutablePosition {
+extension ManipulatedPosition {
     func toRemote() -> RemotePosition {
         RemotePosition(instrument: self.instrument.toRemote(),
                        quantity: self.quantity,
