@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import Combine
 
 class ViewController: UIViewController {
+    private var cancellables = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,14 +18,16 @@ class ViewController: UIViewController {
         //TODO: remove
         let dataSource = RemotePortfolioDataSourceImpl(httpClient: URLSessionHTTPClient(),
                                                        requestProvider: PortfolioURLRequestProvider(url: URL(string: "https://dummyjson.com/c/60b7-70a6-4ee3-bae8")!))
-        dataSource.fetchPortfolio { result in
-            switch result {
-            case let .failure(error):
-                print(error)
-            case let .success(remotePortfolio):
-                print(remotePortfolio)
+        let simplePublisher = SimpleRemotePortfolioPublisher(dataSource: dataSource)
+        let servicePublisher = SimulatedRemotePortfolioServicePublisher(dataSource: dataSource)
+        
+        servicePublisher.fetchPortfolioPublisher()
+            .sink { _ in
+                
+            } receiveValue: { remotePortfolio in
+                print(remotePortfolio.balance.netValue)
             }
-        }
+            .store(in: &cancellables)
     }
 
 

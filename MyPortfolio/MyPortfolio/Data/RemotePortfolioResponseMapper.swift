@@ -28,6 +28,7 @@ final class RemotePortfolioResponseMapper {
             throw Error.invalidData
         }
         
+        print("CALCULATED BALANCE: \(portfolioResponse.portfolio.calculatedBalanceNet)")
         return portfolioResponse.portfolio
     }
     
