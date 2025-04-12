@@ -20,6 +20,7 @@
 		D4C696162DAA9E09006604BC /* RemotePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696152DAA9E09006604BC /* RemotePosition.swift */; };
 		D4C696182DAA9E20006604BC /* RemoteInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696172DAA9E20006604BC /* RemoteInstrument.swift */; };
 		D4C6961A2DAA9E64006604BC /* RemotePortfolioDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696192DAA9E64006604BC /* RemotePortfolioDataSource.swift */; };
+		D4C6961C2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D4C696152DAA9E09006604BC /* RemotePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePosition.swift; sourceTree = "<group>"; };
 		D4C696172DAA9E20006604BC /* RemoteInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteInstrument.swift; sourceTree = "<group>"; };
 		D4C696192DAA9E64006604BC /* RemotePortfolioDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioDataSource.swift; sourceTree = "<group>"; };
+		D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioResponseMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			children = (
 				D4C696102DAA9BC9006604BC /* Model */,
 				D4C696192DAA9E64006604BC /* RemotePortfolioDataSource.swift */,
+				D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				D4C695C92DAA866D006604BC /* ViewController.swift in Sources */,
 				D4C696032DAA8EF0006604BC /* URLSessionHTTPClient.swift in Sources */,
 				D4C696142DAA9DE7006604BC /* RemoteBalance.swift in Sources */,
+				D4C6961C2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift in Sources */,
 				D4C6961A2DAA9E64006604BC /* RemotePortfolioDataSource.swift in Sources */,
 				D4C695C52DAA866D006604BC /* AppDelegate.swift in Sources */,
 				D4C696182DAA9E20006604BC /* RemoteInstrument.swift in Sources */,

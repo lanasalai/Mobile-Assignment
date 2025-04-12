@@ -38,28 +38,6 @@ class RemotePortfolioDataSourceImpl: RemotePortfolioDataSource {
     }
     
     private func mapResponse(_ data: Data, _ response: HTTPURLResponse) -> Result {
-        Result { try map(data, response) }
-    }
-    
-    enum Error: Swift.Error {
-        case unexpectedError
-        case invalidData
-    }
-    
-    private struct PortfolioResponse: Decodable {
-        let portfolio: RemotePortfolio
-    }
-    
-    private func map(_ data: Data, _ response: HTTPURLResponse) throws -> RemotePortfolio {
-        guard response.statusCode == 200 else {
-            throw Error.unexpectedError
-        }
-        
-        let decoder = JSONDecoder()
-        guard let portfolioResponse = try? decoder.decode(PortfolioResponse.self, from: data) else {
-            throw Error.invalidData
-        }
-        
-        return portfolioResponse.portfolio
+        Result { try RemotePortfolioResponseMapper.map(data, response) }
     }
 }
