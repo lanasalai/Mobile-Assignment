@@ -31,6 +31,12 @@
 		D4C696342DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */; };
 		D4C696372DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696362DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift */; };
 		D4C696392DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696382DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift */; };
+		D4C6963D2DAB0A1B006604BC /* PortfolioRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6963C2DAB0A1B006604BC /* PortfolioRepository.swift */; };
+		D4C6963F2DAB0A40006604BC /* PortfolioRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6963E2DAB0A40006604BC /* PortfolioRepositoryImpl.swift */; };
+		D4C696412DAB0EA5006604BC /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696402DAB0EA5006604BC /* Portfolio.swift */; };
+		D4C696432DAB0EAF006604BC /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696422DAB0EAF006604BC /* Balance.swift */; };
+		D4C696452DAB0EB7006604BC /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696442DAB0EB7006604BC /* Position.swift */; };
+		D4C696472DAB0EC1006604BC /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696462DAB0EC1006604BC /* Instrument.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +77,12 @@
 		D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioDataSourceImpl.swift; sourceTree = "<group>"; };
 		D4C696362DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioSimplePublisher.swift; sourceTree = "<group>"; };
 		D4C696382DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioSimulatedServicePublisher.swift; sourceTree = "<group>"; };
+		D4C6963C2DAB0A1B006604BC /* PortfolioRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioRepository.swift; sourceTree = "<group>"; };
+		D4C6963E2DAB0A40006604BC /* PortfolioRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioRepositoryImpl.swift; sourceTree = "<group>"; };
+		D4C696402DAB0EA5006604BC /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
+		D4C696422DAB0EAF006604BC /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		D4C696442DAB0EB7006604BC /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		D4C696462DAB0EC1006604BC /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +210,7 @@
 		D4C6960D2DAA9B4F006604BC /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				D4C6963C2DAB0A1B006604BC /* PortfolioRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -205,6 +218,10 @@
 		D4C6960E2DAA9B55006604BC /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				D4C696402DAB0EA5006604BC /* Portfolio.swift */,
+				D4C696422DAB0EAF006604BC /* Balance.swift */,
+				D4C696442DAB0EB7006604BC /* Position.swift */,
+				D4C696462DAB0EC1006604BC /* Instrument.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -263,6 +280,7 @@
 				D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */,
 				D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */,
 				D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */,
+				D4C6963E2DAB0A40006604BC /* PortfolioRepositoryImpl.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -376,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C696412DAB0EA5006604BC /* Portfolio.swift in Sources */,
 				D4C696282DAADD61006604BC /* ManipulatedPortfolio.swift in Sources */,
 				D4C696162DAA9E09006604BC /* RemotePosition.swift in Sources */,
 				D4C696122DAA9C0C006604BC /* RemotePortfolio.swift in Sources */,
@@ -386,16 +405,21 @@
 				D4C696392DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift in Sources */,
 				D4C6961A2DAA9E64006604BC /* RemotePortfolioDataSource.swift in Sources */,
 				D4C696242DAABC38006604BC /* RemotePortfolioPublisher.swift in Sources */,
+				D4C6963D2DAB0A1B006604BC /* PortfolioRepository.swift in Sources */,
+				D4C6963F2DAB0A40006604BC /* PortfolioRepositoryImpl.swift in Sources */,
 				D4C695C52DAA866D006604BC /* AppDelegate.swift in Sources */,
 				D4C696222DAAACDC006604BC /* PortfolioURLRequestProvider.swift in Sources */,
 				D4C696182DAA9E20006604BC /* RemoteInstrument.swift in Sources */,
+				D4C696432DAB0EAF006604BC /* Balance.swift in Sources */,
 				D4C6962C2DAAFB18006604BC /* ManipulatedPosition.swift in Sources */,
 				D4C696372DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift in Sources */,
 				D4C696342DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift in Sources */,
+				D4C696452DAB0EB7006604BC /* Position.swift in Sources */,
 				D4C696012DAA8E29006604BC /* HTTPClient.swift in Sources */,
 				D4C6961E2DAAAB6E006604BC /* URLRequestProvider.swift in Sources */,
 				D4C6962E2DAAFB3B006604BC /* ManipulatedInstrument.swift in Sources */,
 				D4C695C72DAA866D006604BC /* SceneDelegate.swift in Sources */,
+				D4C696472DAB0EC1006604BC /* Instrument.swift in Sources */,
 				D4C6962A2DAAFAD9006604BC /* ManipulatedBalance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

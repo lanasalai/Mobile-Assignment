@@ -18,7 +18,6 @@ class ViewController: UIViewController {
         //TODO: remove
         let dataSource = RemotePortfolioDataSourceImpl(httpClient: URLSessionHTTPClient(),
                                                        requestProvider: PortfolioURLRequestProvider(url: URL(string: "https://dummyjson.com/c/60b7-70a6-4ee3-bae8")!))
-        let simplePublisher = RemotePortfolioSimplePublisher(dataSource: dataSource)
         let servicePublisher = RemotePortfolioSimulatedServicePublisher(dataSource: dataSource)
         
         servicePublisher.fetchPortfolioPublisher()

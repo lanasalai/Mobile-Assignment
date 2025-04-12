@@ -8,5 +8,5 @@
 import Combine
 
 protocol RemotePortfolioPublisher {
-    func fetchPortfolioPublisher() -> AnyPublisher<RemotePortfolio, Error>
+    func fetchPortfolioPublisher() -> AnyPublisher<ManipulatedPortfolio, Error>
 }

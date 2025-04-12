@@ -7,7 +7,7 @@
 
 import Combine
 
-class RemotePortfolioSimplePublisher: RemotePortfolioPublisher {
+class RemotePortfolioSimplePublisher {
     private let dataSource: RemotePortfolioDataSource
     
     init(dataSource: RemotePortfolioDataSource) {
