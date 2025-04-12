@@ -15,6 +15,10 @@
 		D4C695DC2DAA866F006604BC /* MyPortfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C695DB2DAA866F006604BC /* MyPortfolioTests.swift */; };
 		D4C696012DAA8E29006604BC /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696002DAA8E29006604BC /* HTTPClient.swift */; };
 		D4C696032DAA8EF0006604BC /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696022DAA8EF0006604BC /* URLSessionHTTPClient.swift */; };
+		D4C696122DAA9C0C006604BC /* RemotePortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696112DAA9C0C006604BC /* RemotePortfolio.swift */; };
+		D4C696142DAA9DE7006604BC /* RemoteBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696132DAA9DE7006604BC /* RemoteBalance.swift */; };
+		D4C696162DAA9E09006604BC /* RemotePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696152DAA9E09006604BC /* RemotePosition.swift */; };
+		D4C696182DAA9E20006604BC /* RemoteInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696172DAA9E20006604BC /* RemoteInstrument.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +43,10 @@
 		D4C695DB2DAA866F006604BC /* MyPortfolioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioTests.swift; sourceTree = "<group>"; };
 		D4C696002DAA8E29006604BC /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D4C696022DAA8EF0006604BC /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		D4C696112DAA9C0C006604BC /* RemotePortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolio.swift; sourceTree = "<group>"; };
+		D4C696132DAA9DE7006604BC /* RemoteBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteBalance.swift; sourceTree = "<group>"; };
+		D4C696152DAA9E09006604BC /* RemotePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePosition.swift; sourceTree = "<group>"; };
+		D4C696172DAA9E20006604BC /* RemoteInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteInstrument.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +146,7 @@
 		D4C696092DAA9B31006604BC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D4C696102DAA9BC9006604BC /* Model */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -178,6 +187,17 @@
 			children = (
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		D4C696102DAA9BC9006604BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696112DAA9C0C006604BC /* RemotePortfolio.swift */,
+				D4C696132DAA9DE7006604BC /* RemoteBalance.swift */,
+				D4C696152DAA9E09006604BC /* RemotePosition.swift */,
+				D4C696172DAA9E20006604BC /* RemoteInstrument.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,9 +300,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C696162DAA9E09006604BC /* RemotePosition.swift in Sources */,
+				D4C696122DAA9C0C006604BC /* RemotePortfolio.swift in Sources */,
 				D4C695C92DAA866D006604BC /* ViewController.swift in Sources */,
 				D4C696032DAA8EF0006604BC /* URLSessionHTTPClient.swift in Sources */,
+				D4C696142DAA9DE7006604BC /* RemoteBalance.swift in Sources */,
 				D4C695C52DAA866D006604BC /* AppDelegate.swift in Sources */,
+				D4C696182DAA9E20006604BC /* RemoteInstrument.swift in Sources */,
 				D4C696012DAA8E29006604BC /* HTTPClient.swift in Sources */,
 				D4C695C72DAA866D006604BC /* SceneDelegate.swift in Sources */,
 			);
