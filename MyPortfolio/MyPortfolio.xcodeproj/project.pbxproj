@@ -76,6 +76,10 @@
 		D4C695C32DAA866D006604BC /* MyPortfolio */ = {
 			isa = PBXGroup;
 			children = (
+				D4C695F82DAA8929006604BC /* Presentation */,
+				D4C695F72DAA8923006604BC /* Domain */,
+				D4C695F62DAA891D006604BC /* Data */,
+				D4C695F42DAA87F8006604BC /* Core */,
 				D4C695C42DAA866D006604BC /* AppDelegate.swift */,
 				D4C695C62DAA866D006604BC /* SceneDelegate.swift */,
 				D4C695C82DAA866D006604BC /* ViewController.swift */,
@@ -92,6 +96,82 @@
 				D4C695DB2DAA866F006604BC /* MyPortfolioTests.swift */,
 			);
 			path = MyPortfolioTests;
+			sourceTree = "<group>";
+		};
+		D4C695F42DAA87F8006604BC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D4C695F52DAA890C006604BC /* Networking */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D4C695F52DAA890C006604BC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D4C695FE2DAA89A1006604BC /* Interface */,
+				D4C695FF2DAA89A8006604BC /* Infrastructure */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D4C695F62DAA891D006604BC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D4C695F72DAA8923006604BC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D4C695F92DAA8931006604BC /* UseCase */,
+				D4C695FA2DAA8939006604BC /* Entity */,
+				D4C695FB2DAA8946006604BC /* Repository */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D4C695F82DAA8929006604BC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D4C695F92DAA8931006604BC /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		D4C695FA2DAA8939006604BC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		D4C695FB2DAA8946006604BC /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		D4C695FE2DAA89A1006604BC /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		D4C695FF2DAA89A8006604BC /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
