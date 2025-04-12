@@ -21,6 +21,8 @@
 		D4C696182DAA9E20006604BC /* RemoteInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696172DAA9E20006604BC /* RemoteInstrument.swift */; };
 		D4C6961A2DAA9E64006604BC /* RemotePortfolioDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696192DAA9E64006604BC /* RemotePortfolioDataSource.swift */; };
 		D4C6961C2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */; };
+		D4C6961E2DAAAB6E006604BC /* URLRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6961D2DAAAB6E006604BC /* URLRequestProvider.swift */; };
+		D4C696222DAAACDC006604BC /* PortfolioURLRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		D4C696172DAA9E20006604BC /* RemoteInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteInstrument.swift; sourceTree = "<group>"; };
 		D4C696192DAA9E64006604BC /* RemotePortfolioDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioDataSource.swift; sourceTree = "<group>"; };
 		D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioResponseMapper.swift; sourceTree = "<group>"; };
+		D4C6961D2DAAAB6E006604BC /* URLRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestProvider.swift; sourceTree = "<group>"; };
+		D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioURLRequestProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				D4C696002DAA8E29006604BC /* HTTPClient.swift */,
+				D4C6961D2DAAAB6E006604BC /* URLRequestProvider.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				D4C696102DAA9BC9006604BC /* Model */,
 				D4C696192DAA9E64006604BC /* RemotePortfolioDataSource.swift */,
 				D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */,
+				D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -314,8 +320,10 @@
 				D4C6961C2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift in Sources */,
 				D4C6961A2DAA9E64006604BC /* RemotePortfolioDataSource.swift in Sources */,
 				D4C695C52DAA866D006604BC /* AppDelegate.swift in Sources */,
+				D4C696222DAAACDC006604BC /* PortfolioURLRequestProvider.swift in Sources */,
 				D4C696182DAA9E20006604BC /* RemoteInstrument.swift in Sources */,
 				D4C696012DAA8E29006604BC /* HTTPClient.swift in Sources */,
+				D4C6961E2DAAAB6E006604BC /* URLRequestProvider.swift in Sources */,
 				D4C695C72DAA866D006604BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

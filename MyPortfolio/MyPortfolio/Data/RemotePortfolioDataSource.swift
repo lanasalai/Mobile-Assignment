@@ -10,24 +10,22 @@ import Foundation
 protocol RemotePortfolioDataSource {
     typealias Result = Swift.Result<RemotePortfolio, Error>
     
+    func fetchPortfolio(_ completion: @escaping (Result) -> Void)
 }
 
 class RemotePortfolioDataSourceImpl: RemotePortfolioDataSource {
     private let httpClient: HTTPClient
-    private let request: URLRequest
+    private let requestProvider: URLRequestProvider
     
     typealias Result = RemotePortfolioDataSource.Result
     
-    init(httpClient: HTTPClient) {
+    init(httpClient: HTTPClient, requestProvider: URLRequestProvider) {
         self.httpClient = httpClient
-        //TODO: - remove from here
-        var request = URLRequest(url: URL(string: "https://dummyjson.com/c/60b7-70a6-4ee3-bae8")!)
-        request.httpMethod = "GET"
-        self.request = request
+        self.requestProvider = requestProvider
     }
     
     func fetchPortfolio(_ completion: @escaping (Result) -> Void) {
-        httpClient.perform(request) { result in
+        httpClient.perform(requestProvider.makeRequest()) { result in
             switch result {
             case let .failure(error):
                 completion(.failure(error))
