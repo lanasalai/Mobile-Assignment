@@ -13,6 +13,8 @@
 		D4C695CE2DAA866E006604BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C695CD2DAA866E006604BC /* Assets.xcassets */; };
 		D4C695D12DAA866E006604BC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D4C695D02DAA866E006604BC /* Base */; };
 		D4C695DC2DAA866F006604BC /* MyPortfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C695DB2DAA866F006604BC /* MyPortfolioTests.swift */; };
+		D4C696012DAA8E29006604BC /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696002DAA8E29006604BC /* HTTPClient.swift */; };
+		D4C696032DAA8EF0006604BC /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696022DAA8EF0006604BC /* URLSessionHTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		D4C695D22DAA866E006604BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4C695D72DAA866F006604BC /* MyPortfolioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPortfolioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4C695DB2DAA866F006604BC /* MyPortfolioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioTests.swift; sourceTree = "<group>"; };
+		D4C696002DAA8E29006604BC /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		D4C696022DAA8EF0006604BC /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 		D4C695FE2DAA89A1006604BC /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				D4C696002DAA8E29006604BC /* HTTPClient.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 		D4C695FF2DAA89A8006604BC /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				D4C696022DAA8EF0006604BC /* URLSessionHTTPClient.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -275,7 +281,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4C695C92DAA866D006604BC /* ViewController.swift in Sources */,
+				D4C696032DAA8EF0006604BC /* URLSessionHTTPClient.swift in Sources */,
 				D4C695C52DAA866D006604BC /* AppDelegate.swift in Sources */,
+				D4C696012DAA8E29006604BC /* HTTPClient.swift in Sources */,
 				D4C695C72DAA866D006604BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
