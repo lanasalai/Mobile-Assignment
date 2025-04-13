@@ -9,22 +9,25 @@ import UIKit
 import Combine
 
 class ViewController: UIViewController {
+    private let repository: PortfolioRepository
     private var cancellables = Set<AnyCancellable>()
+    
+    init(repository: PortfolioRepository) {
+        self.repository = repository
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        return nil
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         //TODO: remove
-        let dataSource = RemotePortfolioDataSourceImpl(httpClient: URLSessionHTTPClient(),
-                                                       requestProvider: PortfolioURLRequestProvider(url: URL(string: "https://dummyjson.com/c/60b7-70a6-4ee3-bae8")!))
-        let servicePublisher = RemotePortfolioSimulatedServicePublisher(dataSource: dataSource)
-        let repository = PortfolioRepositoryImpl(service: servicePublisher)
-        
         repository.fetchPortfolio()
-            .sink { _ in
-                
-            } receiveValue: { portfolio in
+            .sink { _ in } receiveValue: { portfolio in
                 print(portfolio.balance.netValue)
             }
             .store(in: &cancellables)

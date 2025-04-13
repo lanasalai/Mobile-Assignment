@@ -20,7 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         
-        let viewController = ViewController()
+        //TODO: remove
+        let dataSource = RemotePortfolioDataSourceImpl(httpClient: URLSessionHTTPClient(),
+                                                       requestProvider: PortfolioURLRequestProvider(url: URL(string: "https://dummyjson.com/c/60b7-70a6-4ee3-bae8")!))
+        let servicePublisher = RemotePortfolioSimulatedServicePublisher(dataSource: dataSource)
+        let repository = PortfolioRepositoryImpl(service: servicePublisher)
+        let viewController = ViewController(repository: repository)
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }

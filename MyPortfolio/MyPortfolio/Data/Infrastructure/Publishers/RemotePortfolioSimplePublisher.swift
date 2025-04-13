@@ -15,7 +15,8 @@ class RemotePortfolioSimplePublisher {
     }
     
     func fetchPortfolioPublisher() -> AnyPublisher<RemotePortfolio, Error> {
-        Future { promise in
+        Future { [weak self] promise in
+            guard let self = self else { return }
             self.dataSource.fetchPortfolio { result in
                 promise(result)
             }

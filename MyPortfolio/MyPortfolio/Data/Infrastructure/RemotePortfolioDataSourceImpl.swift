@@ -19,7 +19,9 @@ class RemotePortfolioDataSourceImpl: RemotePortfolioDataSource {
     }
     
     func fetchPortfolio(_ completion: @escaping (Result) -> Void) {
-        httpClient.perform(requestProvider.makeRequest()) { result in
+        httpClient.perform(requestProvider.makeRequest()) { [weak self] result in
+            guard let self = self else { return }
+
             switch result {
             case let .failure(error):
                 completion(.failure(error))

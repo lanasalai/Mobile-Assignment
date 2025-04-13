@@ -18,7 +18,9 @@ class RemotePortfolioSimulatedServicePublisher: RemotePortfolioPublisher {
     }
     
     func fetchPortfolioPublisher() -> AnyPublisher<ManipulatedPortfolio, any Error> {
-        dataSource.fetchPortfolio { result in
+        dataSource.fetchPortfolio { [weak self] result in
+            guard let self = self else { return }
+            
             switch result {
             case let .failure(error):
                 self.subject.send(completion: .failure(error))
@@ -33,7 +35,8 @@ class RemotePortfolioSimulatedServicePublisher: RemotePortfolioPublisher {
     private func startSimulation(with initial: RemotePortfolio) {
         timer = Timer.publish(every: 1.0, on: .main, in: .common)
             .autoconnect()
-            .sink(receiveValue: { _ in
+            .sink(receiveValue: { [weak self] _ in
+                guard let self = self else { return }
                 self.subject.send(initial.manipulate())
             })
     }
