@@ -13,6 +13,30 @@
 		D4C695CE2DAA866E006604BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C695CD2DAA866E006604BC /* Assets.xcassets */; };
 		D4C695D12DAA866E006604BC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D4C695D02DAA866E006604BC /* Base */; };
 		D4C695DC2DAA866F006604BC /* MyPortfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C695DB2DAA866F006604BC /* MyPortfolioTests.swift */; };
+		D4C696012DAA8E29006604BC /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696002DAA8E29006604BC /* HTTPClient.swift */; };
+		D4C696032DAA8EF0006604BC /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696022DAA8EF0006604BC /* URLSessionHTTPClient.swift */; };
+		D4C696122DAA9C0C006604BC /* RemotePortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696112DAA9C0C006604BC /* RemotePortfolio.swift */; };
+		D4C696142DAA9DE7006604BC /* RemoteBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696132DAA9DE7006604BC /* RemoteBalance.swift */; };
+		D4C696162DAA9E09006604BC /* RemotePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696152DAA9E09006604BC /* RemotePosition.swift */; };
+		D4C696182DAA9E20006604BC /* RemoteInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696172DAA9E20006604BC /* RemoteInstrument.swift */; };
+		D4C6961A2DAA9E64006604BC /* RemotePortfolioDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696192DAA9E64006604BC /* RemotePortfolioDataSource.swift */; };
+		D4C6961C2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */; };
+		D4C6961E2DAAAB6E006604BC /* URLRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6961D2DAAAB6E006604BC /* URLRequestProvider.swift */; };
+		D4C696222DAAACDC006604BC /* PortfolioURLRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */; };
+		D4C696242DAABC38006604BC /* RemotePortfolioPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696232DAABC38006604BC /* RemotePortfolioPublisher.swift */; };
+		D4C696282DAADD61006604BC /* ManipulatedPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696272DAADD61006604BC /* ManipulatedPortfolio.swift */; };
+		D4C6962A2DAAFAD9006604BC /* ManipulatedBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696292DAAFAD9006604BC /* ManipulatedBalance.swift */; };
+		D4C6962C2DAAFB18006604BC /* ManipulatedPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6962B2DAAFB18006604BC /* ManipulatedPosition.swift */; };
+		D4C6962E2DAAFB3B006604BC /* ManipulatedInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6962D2DAAFB3B006604BC /* ManipulatedInstrument.swift */; };
+		D4C696342DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */; };
+		D4C696372DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696362DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift */; };
+		D4C696392DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696382DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift */; };
+		D4C6963D2DAB0A1B006604BC /* PortfolioRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6963C2DAB0A1B006604BC /* PortfolioRepository.swift */; };
+		D4C6963F2DAB0A40006604BC /* PortfolioRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6963E2DAB0A40006604BC /* PortfolioRepositoryImpl.swift */; };
+		D4C696412DAB0EA5006604BC /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696402DAB0EA5006604BC /* Portfolio.swift */; };
+		D4C696432DAB0EAF006604BC /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696422DAB0EAF006604BC /* Balance.swift */; };
+		D4C696452DAB0EB7006604BC /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696442DAB0EB7006604BC /* Position.swift */; };
+		D4C696472DAB0EC1006604BC /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696462DAB0EC1006604BC /* Instrument.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +59,30 @@
 		D4C695D22DAA866E006604BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4C695D72DAA866F006604BC /* MyPortfolioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPortfolioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4C695DB2DAA866F006604BC /* MyPortfolioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioTests.swift; sourceTree = "<group>"; };
+		D4C696002DAA8E29006604BC /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		D4C696022DAA8EF0006604BC /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		D4C696112DAA9C0C006604BC /* RemotePortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolio.swift; sourceTree = "<group>"; };
+		D4C696132DAA9DE7006604BC /* RemoteBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteBalance.swift; sourceTree = "<group>"; };
+		D4C696152DAA9E09006604BC /* RemotePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePosition.swift; sourceTree = "<group>"; };
+		D4C696172DAA9E20006604BC /* RemoteInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteInstrument.swift; sourceTree = "<group>"; };
+		D4C696192DAA9E64006604BC /* RemotePortfolioDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioDataSource.swift; sourceTree = "<group>"; };
+		D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioResponseMapper.swift; sourceTree = "<group>"; };
+		D4C6961D2DAAAB6E006604BC /* URLRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestProvider.swift; sourceTree = "<group>"; };
+		D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioURLRequestProvider.swift; sourceTree = "<group>"; };
+		D4C696232DAABC38006604BC /* RemotePortfolioPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioPublisher.swift; sourceTree = "<group>"; };
+		D4C696272DAADD61006604BC /* ManipulatedPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulatedPortfolio.swift; sourceTree = "<group>"; };
+		D4C696292DAAFAD9006604BC /* ManipulatedBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulatedBalance.swift; sourceTree = "<group>"; };
+		D4C6962B2DAAFB18006604BC /* ManipulatedPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulatedPosition.swift; sourceTree = "<group>"; };
+		D4C6962D2DAAFB3B006604BC /* ManipulatedInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulatedInstrument.swift; sourceTree = "<group>"; };
+		D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioDataSourceImpl.swift; sourceTree = "<group>"; };
+		D4C696362DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioSimplePublisher.swift; sourceTree = "<group>"; };
+		D4C696382DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioSimulatedServicePublisher.swift; sourceTree = "<group>"; };
+		D4C6963C2DAB0A1B006604BC /* PortfolioRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioRepository.swift; sourceTree = "<group>"; };
+		D4C6963E2DAB0A40006604BC /* PortfolioRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioRepositoryImpl.swift; sourceTree = "<group>"; };
+		D4C696402DAB0EA5006604BC /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
+		D4C696422DAB0EAF006604BC /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		D4C696442DAB0EB7006604BC /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		D4C696462DAB0EC1006604BC /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +124,10 @@
 		D4C695C32DAA866D006604BC /* MyPortfolio */ = {
 			isa = PBXGroup;
 			children = (
+				D4C6960B2DAA9B43006604BC /* Presentation */,
+				D4C6960A2DAA9B3E006604BC /* Domain */,
+				D4C696092DAA9B31006604BC /* Data */,
+				D4C695F42DAA87F8006604BC /* Core */,
 				D4C695C42DAA866D006604BC /* AppDelegate.swift */,
 				D4C695C62DAA866D006604BC /* SceneDelegate.swift */,
 				D4C695C82DAA866D006604BC /* ViewController.swift */,
@@ -92,6 +144,154 @@
 				D4C695DB2DAA866F006604BC /* MyPortfolioTests.swift */,
 			);
 			path = MyPortfolioTests;
+			sourceTree = "<group>";
+		};
+		D4C695F42DAA87F8006604BC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D4C695F52DAA890C006604BC /* Networking */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D4C695F52DAA890C006604BC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D4C695FE2DAA89A1006604BC /* Interface */,
+				D4C695FF2DAA89A8006604BC /* Infrastructure */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D4C695FE2DAA89A1006604BC /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696002DAA8E29006604BC /* HTTPClient.swift */,
+				D4C6961D2DAAAB6E006604BC /* URLRequestProvider.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		D4C695FF2DAA89A8006604BC /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696022DAA8EF0006604BC /* URLSessionHTTPClient.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		D4C696092DAA9B31006604BC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696102DAA9BC9006604BC /* Model */,
+				D4C6962F2DAAFB66006604BC /* Interface */,
+				D4C696302DAAFB7A006604BC /* Infrastructure */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D4C6960A2DAA9B3E006604BC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D4C6960F2DAA9B5A006604BC /* UseCase */,
+				D4C6960E2DAA9B55006604BC /* Entity */,
+				D4C6960D2DAA9B4F006604BC /* Repository */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D4C6960B2DAA9B43006604BC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D4C6960D2DAA9B4F006604BC /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D4C6963C2DAB0A1B006604BC /* PortfolioRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		D4C6960E2DAA9B55006604BC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696402DAB0EA5006604BC /* Portfolio.swift */,
+				D4C696422DAB0EAF006604BC /* Balance.swift */,
+				D4C696442DAB0EB7006604BC /* Position.swift */,
+				D4C696462DAB0EC1006604BC /* Instrument.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		D4C6960F2DAA9B5A006604BC /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		D4C696102DAA9BC9006604BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696262DAADD4C006604BC /* Mutable */,
+				D4C696252DAADD3A006604BC /* Remote */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D4C696252DAADD3A006604BC /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696112DAA9C0C006604BC /* RemotePortfolio.swift */,
+				D4C696132DAA9DE7006604BC /* RemoteBalance.swift */,
+				D4C696152DAA9E09006604BC /* RemotePosition.swift */,
+				D4C696172DAA9E20006604BC /* RemoteInstrument.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		D4C696262DAADD4C006604BC /* Mutable */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696272DAADD61006604BC /* ManipulatedPortfolio.swift */,
+				D4C696292DAAFAD9006604BC /* ManipulatedBalance.swift */,
+				D4C6962B2DAAFB18006604BC /* ManipulatedPosition.swift */,
+				D4C6962D2DAAFB3B006604BC /* ManipulatedInstrument.swift */,
+			);
+			path = Mutable;
+			sourceTree = "<group>";
+		};
+		D4C6962F2DAAFB66006604BC /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696192DAA9E64006604BC /* RemotePortfolioDataSource.swift */,
+				D4C696232DAABC38006604BC /* RemotePortfolioPublisher.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		D4C696302DAAFB7A006604BC /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696352DAAFC22006604BC /* Publishers */,
+				D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */,
+				D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */,
+				D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */,
+				D4C6963E2DAB0A40006604BC /* PortfolioRepositoryImpl.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		D4C696352DAAFC22006604BC /* Publishers */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696362DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift */,
+				D4C696382DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift */,
+			);
+			path = Publishers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,9 +394,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C696412DAB0EA5006604BC /* Portfolio.swift in Sources */,
+				D4C696282DAADD61006604BC /* ManipulatedPortfolio.swift in Sources */,
+				D4C696162DAA9E09006604BC /* RemotePosition.swift in Sources */,
+				D4C696122DAA9C0C006604BC /* RemotePortfolio.swift in Sources */,
 				D4C695C92DAA866D006604BC /* ViewController.swift in Sources */,
+				D4C696032DAA8EF0006604BC /* URLSessionHTTPClient.swift in Sources */,
+				D4C696142DAA9DE7006604BC /* RemoteBalance.swift in Sources */,
+				D4C6961C2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift in Sources */,
+				D4C696392DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift in Sources */,
+				D4C6961A2DAA9E64006604BC /* RemotePortfolioDataSource.swift in Sources */,
+				D4C696242DAABC38006604BC /* RemotePortfolioPublisher.swift in Sources */,
+				D4C6963D2DAB0A1B006604BC /* PortfolioRepository.swift in Sources */,
+				D4C6963F2DAB0A40006604BC /* PortfolioRepositoryImpl.swift in Sources */,
 				D4C695C52DAA866D006604BC /* AppDelegate.swift in Sources */,
+				D4C696222DAAACDC006604BC /* PortfolioURLRequestProvider.swift in Sources */,
+				D4C696182DAA9E20006604BC /* RemoteInstrument.swift in Sources */,
+				D4C696432DAB0EAF006604BC /* Balance.swift in Sources */,
+				D4C6962C2DAAFB18006604BC /* ManipulatedPosition.swift in Sources */,
+				D4C696372DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift in Sources */,
+				D4C696342DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift in Sources */,
+				D4C696452DAB0EB7006604BC /* Position.swift in Sources */,
+				D4C696012DAA8E29006604BC /* HTTPClient.swift in Sources */,
+				D4C6961E2DAAAB6E006604BC /* URLRequestProvider.swift in Sources */,
+				D4C6962E2DAAFB3B006604BC /* ManipulatedInstrument.swift in Sources */,
 				D4C695C72DAA866D006604BC /* SceneDelegate.swift in Sources */,
+				D4C696472DAB0EC1006604BC /* Instrument.swift in Sources */,
+				D4C6962A2DAAFAD9006604BC /* ManipulatedBalance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
