@@ -37,6 +37,7 @@
 		D4C696432DAB0EAF006604BC /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696422DAB0EAF006604BC /* Balance.swift */; };
 		D4C696452DAB0EB7006604BC /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696442DAB0EB7006604BC /* Position.swift */; };
 		D4C696472DAB0EC1006604BC /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696462DAB0EC1006604BC /* Instrument.swift */; };
+		D4C696492DAC3063006604BC /* ObserveSimulatedPortfolioUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696482DAC3063006604BC /* ObserveSimulatedPortfolioUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		D4C696422DAB0EAF006604BC /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		D4C696442DAB0EB7006604BC /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		D4C696462DAB0EC1006604BC /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
+		D4C696482DAC3063006604BC /* ObserveSimulatedPortfolioUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveSimulatedPortfolioUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 		D4C6960F2DAA9B5A006604BC /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				D4C696482DAC3063006604BC /* ObserveSimulatedPortfolioUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -236,7 +239,7 @@
 		D4C696102DAA9BC9006604BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D4C696262DAADD4C006604BC /* Mutable */,
+				D4C696262DAADD4C006604BC /* Manipulated */,
 				D4C696252DAADD3A006604BC /* Remote */,
 			);
 			path = Model;
@@ -253,7 +256,7 @@
 			path = Remote;
 			sourceTree = "<group>";
 		};
-		D4C696262DAADD4C006604BC /* Mutable */ = {
+		D4C696262DAADD4C006604BC /* Manipulated */ = {
 			isa = PBXGroup;
 			children = (
 				D4C696272DAADD61006604BC /* ManipulatedPortfolio.swift */,
@@ -261,7 +264,7 @@
 				D4C6962B2DAAFB18006604BC /* ManipulatedPosition.swift */,
 				D4C6962D2DAAFB3B006604BC /* ManipulatedInstrument.swift */,
 			);
-			path = Mutable;
+			path = Manipulated;
 			sourceTree = "<group>";
 		};
 		D4C6962F2DAAFB66006604BC /* Interface */ = {
@@ -420,6 +423,7 @@
 				D4C6962E2DAAFB3B006604BC /* ManipulatedInstrument.swift in Sources */,
 				D4C695C72DAA866D006604BC /* SceneDelegate.swift in Sources */,
 				D4C696472DAB0EC1006604BC /* Instrument.swift in Sources */,
+				D4C696492DAC3063006604BC /* ObserveSimulatedPortfolioUseCase.swift in Sources */,
 				D4C6962A2DAAFAD9006604BC /* ManipulatedBalance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
