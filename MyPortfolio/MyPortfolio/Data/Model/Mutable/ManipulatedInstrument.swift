@@ -12,13 +12,3 @@ struct ManipulatedInstrument {
     let currency: String
     var lastTradedPrice: Double
 }
-
-extension ManipulatedInstrument {
-    func toRemote() -> RemoteInstrument {
-        RemoteInstrument(ticker: self.ticker,
-                         name: self.name,
-                         exchange: self.exchange,
-                         currency: self.currency,
-                         lastTradedPrice: self.lastTradedPrice)
-    }
-}

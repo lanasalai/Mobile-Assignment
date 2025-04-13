@@ -16,9 +16,3 @@ struct ManipulatedPortfolio {
     }
     var positions: [ManipulatedPosition]
 }
-
-extension ManipulatedPortfolio {
-    func toRemote() -> RemotePortfolio {
-        RemotePortfolio(balance: self.balance.toRemote(), positions: self.positions.map { $0.toRemote() })
-    }
-}

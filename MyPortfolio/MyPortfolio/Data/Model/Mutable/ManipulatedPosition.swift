@@ -20,15 +20,3 @@ struct ManipulatedPosition {
         (pnl * 100) / cost
     }
 }
-
-extension ManipulatedPosition {
-    func toRemote() -> RemotePosition {
-        RemotePosition(instrument: self.instrument.toRemote(),
-                       quantity: self.quantity,
-                       averagePrice: self.averagePrice,
-                       cost: self.cost,
-                       marketValue: self.marketValue,
-                       pnl: self.pnl,
-                       pnlPercentage: self.pnlPercentage)
-    }
-}

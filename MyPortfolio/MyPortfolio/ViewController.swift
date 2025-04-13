@@ -19,12 +19,13 @@ class ViewController: UIViewController {
         let dataSource = RemotePortfolioDataSourceImpl(httpClient: URLSessionHTTPClient(),
                                                        requestProvider: PortfolioURLRequestProvider(url: URL(string: "https://dummyjson.com/c/60b7-70a6-4ee3-bae8")!))
         let servicePublisher = RemotePortfolioSimulatedServicePublisher(dataSource: dataSource)
+        let repository = PortfolioRepositoryImpl(service: servicePublisher)
         
-        servicePublisher.fetchPortfolioPublisher()
+        repository.fetchPortfolio()
             .sink { _ in
                 
-            } receiveValue: { remotePortfolio in
-                print(remotePortfolio.balance.netValue)
+            } receiveValue: { portfolio in
+                print(portfolio.balance.netValue)
             }
             .store(in: &cancellables)
     }

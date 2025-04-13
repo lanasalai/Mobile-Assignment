@@ -10,9 +10,3 @@ struct ManipulatedBalance {
     var pnl: Double
     var pnlPercentage: Double
 }
-
-extension ManipulatedBalance {
-    func toRemote() -> RemoteBalance {
-        RemoteBalance(netValue: self.netValue, pnl: self.pnl, pnlPercentage: self.pnlPercentage)
-    }
-}
