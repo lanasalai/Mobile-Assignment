@@ -23,25 +23,38 @@ class PortfolioRepositoryImpl: PortfolioRepository {
 
 private extension ManipulatedPortfolio {
     func toEntity() -> Portfolio {
-        Portfolio(balance: balance.toEntity(), positions: positions.map { $0.toEntity() })
+        Portfolio(balance: balance.toEntity(), 
+                  positions: positions.map { $0.toEntity() })
     }
 }
 
 private extension ManipulatedBalance {
     func toEntity() -> Balance {
-        Balance(netValue: netValue, pnl: pnl, pnlPercentage: pnlPercentage)
+        Balance(netValue: netValue, 
+                pnl: pnl,
+                pnlPercentage: pnlPercentage)
     }
 }
 
 private extension ManipulatedPosition {
     func toEntity() -> Position {
-        Position(instrument: instrument.toEntity(), quantity: quantity, averagePrice: averagePrice, cost: cost, marketValue: marketValue, pnl: pnl, pnlPercentage: pnlPercentage)
+        Position(instrument: instrument.toEntity(), 
+                 quantity: quantity,
+                 averagePrice: averagePrice,
+                 cost: cost,
+                 marketValue: marketValue,
+                 pnl: pnl,
+                 pnlPercentage: pnlPercentage)
     }
 }
 
 private extension ManipulatedInstrument {
     func toEntity() -> Instrument {
-        Instrument(ticker: ticker, name: name, exchange: exchange, currency: currency, lastTradedPrice: lastTradedPrice)
+        Instrument(ticker: ticker, 
+                   name: name,
+                   exchange: exchange,
+                   currency: currency,
+                   lastTradedPrice: lastTradedPrice)
     }
 }
 
