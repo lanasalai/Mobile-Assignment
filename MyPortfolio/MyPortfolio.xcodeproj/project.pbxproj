@@ -39,6 +39,7 @@
 		D4C696472DAB0EC1006604BC /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696462DAB0EC1006604BC /* Instrument.swift */; };
 		D4C696492DAC3063006604BC /* ObserveSimulatedPortfolioUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696482DAC3063006604BC /* ObserveSimulatedPortfolioUseCase.swift */; };
 		D4C696522DAD6D3F006604BC /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696512DAD6D3F006604BC /* PortfolioViewModel.swift */; };
+		D4C696552DAD7B16006604BC /* PositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696542DAD7B16006604BC /* PositionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		D4C696462DAB0EC1006604BC /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		D4C696482DAC3063006604BC /* ObserveSimulatedPortfolioUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveSimulatedPortfolioUseCase.swift; sourceTree = "<group>"; };
 		D4C696512DAD6D3F006604BC /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
+		D4C696542DAD7B16006604BC /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,10 +296,19 @@
 		D4C696502DAD6AC4006604BC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				D4C695C82DAA866D006604BC /* PortfolioViewController.swift */,
+				D4C696532DAD7AEF006604BC /* UI */,
 				D4C696512DAD6D3F006604BC /* PortfolioViewModel.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D4C696532DAD7AEF006604BC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D4C695C82DAA866D006604BC /* PortfolioViewController.swift */,
+				D4C696542DAD7B16006604BC /* PositionCell.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +415,7 @@
 				D4C696282DAADD61006604BC /* ManipulatedPortfolio.swift in Sources */,
 				D4C696162DAA9E09006604BC /* RemotePosition.swift in Sources */,
 				D4C696122DAA9C0C006604BC /* RemotePortfolio.swift in Sources */,
+				D4C696552DAD7B16006604BC /* PositionCell.swift in Sources */,
 				D4C695C92DAA866D006604BC /* PortfolioViewController.swift in Sources */,
 				D4C696032DAA8EF0006604BC /* URLSessionHTTPClient.swift in Sources */,
 				D4C696142DAA9DE7006604BC /* RemoteBalance.swift in Sources */,
