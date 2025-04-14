@@ -126,13 +126,12 @@
 		D4C695C32DAA866D006604BC /* MyPortfolio */ = {
 			isa = PBXGroup;
 			children = (
-				D4C6960B2DAA9B43006604BC /* Presentation */,
+				D4C696502DAD6AC4006604BC /* Presentation */,
 				D4C6960A2DAA9B3E006604BC /* Domain */,
 				D4C696092DAA9B31006604BC /* Data */,
 				D4C695F42DAA87F8006604BC /* Core */,
 				D4C695C42DAA866D006604BC /* AppDelegate.swift */,
 				D4C695C62DAA866D006604BC /* SceneDelegate.swift */,
-				D4C695C82DAA866D006604BC /* ViewController.swift */,
 				D4C695CD2DAA866E006604BC /* Assets.xcassets */,
 				D4C695CF2DAA866E006604BC /* LaunchScreen.storyboard */,
 				D4C695D22DAA866E006604BC /* Info.plist */,
@@ -200,13 +199,6 @@
 				D4C6960D2DAA9B4F006604BC /* Repository */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		D4C6960B2DAA9B43006604BC /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presentation;
 			sourceTree = "<group>";
 		};
 		D4C6960D2DAA9B4F006604BC /* Repository */ = {
@@ -295,6 +287,14 @@
 				D4C696382DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift */,
 			);
 			path = Publishers;
+			sourceTree = "<group>";
+		};
+		D4C696502DAD6AC4006604BC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D4C695C82DAA866D006604BC /* ViewController.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
