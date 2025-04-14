@@ -34,8 +34,8 @@ class PortfolioViewController: UIViewController {
     }
     
     private func createLayout() -> UICollectionViewCompositionalLayout {
-        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(80)), subitems: [item])
+        let item = CompositionalLayout.item(width: .fractionalWidth(1), height: .fractionalHeight(1), spacing: 2)
+        let group = CompositionalLayout.verticalGroup(width: .fractionalWidth(1), height: .estimated(80), item: item, count: 1)
         let section = NSCollectionLayoutSection(group: group)
         return UICollectionViewCompositionalLayout(section: section)
     }
