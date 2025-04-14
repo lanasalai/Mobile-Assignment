@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D4C695C52DAA866D006604BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C695C42DAA866D006604BC /* AppDelegate.swift */; };
 		D4C695C72DAA866D006604BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C695C62DAA866D006604BC /* SceneDelegate.swift */; };
-		D4C695C92DAA866D006604BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C695C82DAA866D006604BC /* ViewController.swift */; };
+		D4C695C92DAA866D006604BC /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C695C82DAA866D006604BC /* PortfolioViewController.swift */; };
 		D4C695CE2DAA866E006604BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C695CD2DAA866E006604BC /* Assets.xcassets */; };
 		D4C695D12DAA866E006604BC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D4C695D02DAA866E006604BC /* Base */; };
 		D4C695DC2DAA866F006604BC /* MyPortfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C695DB2DAA866F006604BC /* MyPortfolioTests.swift */; };
@@ -54,7 +54,7 @@
 		D4C695C12DAA866D006604BC /* MyPortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4C695C42DAA866D006604BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4C695C62DAA866D006604BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D4C695C82DAA866D006604BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D4C695C82DAA866D006604BC /* PortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
 		D4C695CD2DAA866E006604BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4C695D02DAA866E006604BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4C695D22DAA866E006604BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 		D4C696502DAD6AC4006604BC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				D4C695C82DAA866D006604BC /* ViewController.swift */,
+				D4C695C82DAA866D006604BC /* PortfolioViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -401,7 +401,7 @@
 				D4C696282DAADD61006604BC /* ManipulatedPortfolio.swift in Sources */,
 				D4C696162DAA9E09006604BC /* RemotePosition.swift in Sources */,
 				D4C696122DAA9C0C006604BC /* RemotePortfolio.swift in Sources */,
-				D4C695C92DAA866D006604BC /* ViewController.swift in Sources */,
+				D4C695C92DAA866D006604BC /* PortfolioViewController.swift in Sources */,
 				D4C696032DAA8EF0006604BC /* URLSessionHTTPClient.swift in Sources */,
 				D4C696142DAA9DE7006604BC /* RemoteBalance.swift in Sources */,
 				D4C6961C2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift in Sources */,

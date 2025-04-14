@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PortfolioViewController.swift
 //  MyPortfolio
 //
 //  Created by Lana Salai on 12.4.25..
@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class ViewController: UIViewController {
+class PortfolioViewController: UIViewController {
     private let repository: PortfolioRepository
     private var cancellables = Set<AnyCancellable>()
     
