@@ -9,6 +9,7 @@ import UIKit
 
 class PortfolioViewController: UIViewController {
     private let viewModel: PortfolioViewModel
+    private var collectionView: UICollectionView!
     
     init(viewModel: PortfolioViewModel) {
         self.viewModel = viewModel
@@ -16,13 +17,44 @@ class PortfolioViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        return nil
+        fatalError("Not implemented")
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupCollectionView()
         viewModel.startObserving()
+    }
+    
+    private func setupCollectionView() {
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
+        collectionView.dataSource = self
+        collectionView.register(PositionCell.self, forCellWithReuseIdentifier: PositionCell.identifier)
+        view.addSubview(collectionView)
+    }
+    
+    private func createLayout() -> UICollectionViewCompositionalLayout {
+        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(80)), subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        return UICollectionViewCompositionalLayout(section: section)
+    }
+}
+
+extension PortfolioViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //TODO: LANA - change
+        5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PositionCell.identifier, for: indexPath) as! PositionCell
+        cell.configure()
+        return cell
     }
 }
 
