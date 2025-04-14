@@ -46,19 +46,19 @@ extension PositionCell {
     func setupSubviews() {
         nameLabel.adjustsFontForContentSizeCategory = true
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        nameLabel.textColor = .label
+        nameLabel.textColor = .white
         
         lastTradedPriceLabel.adjustsFontForContentSizeCategory = true
         lastTradedPriceLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
-        lastTradedPriceLabel.textColor = .secondaryLabel
+        lastTradedPriceLabel.textColor = .white
 
         quantityLabel.adjustsFontForContentSizeCategory = true
         quantityLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        quantityLabel.textColor = .label
+        quantityLabel.textColor = .white
 
         marketValueLabel.adjustsFontForContentSizeCategory = true
         marketValueLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
-        marketValueLabel.textColor = .purple
+        marketValueLabel.textColor = .magenta
 
         pnlLabel.adjustsFontForContentSizeCategory = true
         pnlLabel.font = UIFont.preferredFont(forTextStyle: .body)

@@ -41,6 +41,7 @@
 		D4C696522DAD6D3F006604BC /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696512DAD6D3F006604BC /* PortfolioViewModel.swift */; };
 		D4C696552DAD7B16006604BC /* PositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696542DAD7B16006604BC /* PositionCell.swift */; };
 		D4C696572DADA544006604BC /* CompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696562DADA544006604BC /* CompositionalLayout.swift */; };
+		D4C696592DADAC04006604BC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696582DADAC04006604BC /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		D4C696512DAD6D3F006604BC /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
 		D4C696542DAD7B16006604BC /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
 		D4C696562DADA544006604BC /* CompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayout.swift; sourceTree = "<group>"; };
+		D4C696582DADAC04006604BC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +312,7 @@
 				D4C695C82DAA866D006604BC /* PortfolioViewController.swift */,
 				D4C696542DAD7B16006604BC /* PositionCell.swift */,
 				D4C696562DADA544006604BC /* CompositionalLayout.swift */,
+				D4C696582DADAC04006604BC /* HeaderView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				D4C6963D2DAB0A1B006604BC /* PortfolioRepository.swift in Sources */,
 				D4C6963F2DAB0A40006604BC /* PortfolioRepositoryImpl.swift in Sources */,
 				D4C696572DADA544006604BC /* CompositionalLayout.swift in Sources */,
+				D4C696592DADAC04006604BC /* HeaderView.swift in Sources */,
 				D4C695C52DAA866D006604BC /* AppDelegate.swift in Sources */,
 				D4C696222DAAACDC006604BC /* PortfolioURLRequestProvider.swift in Sources */,
 				D4C696182DAA9E20006604BC /* RemoteInstrument.swift in Sources */,
