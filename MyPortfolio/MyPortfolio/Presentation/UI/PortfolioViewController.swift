@@ -41,7 +41,7 @@ class PortfolioViewController: UIViewController {
         let group = CompositionalLayout.verticalGroup(width: .fractionalWidth(1), height: .estimated(80), item: item, count: 1)
         let section = NSCollectionLayoutSection(group: group)
         
-        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(300)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        let header = CompositionalLayout.header(width: .fractionalWidth(1), height: .absolute(300))
         section.boundarySupplementaryItems = [header]
         
         return UICollectionViewCompositionalLayout(section: section)

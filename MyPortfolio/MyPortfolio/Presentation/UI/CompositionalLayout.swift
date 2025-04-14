@@ -27,4 +27,13 @@ struct CompositionalLayout {
                                                      count: count)
         return group
     }
+    
+    static func header(width: NSCollectionLayoutDimension,
+                       height: NSCollectionLayoutDimension) -> NSCollectionLayoutBoundarySupplementaryItem {
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: NSCollectionLayoutSize(widthDimension: width, 
+                                                                                                    heightDimension: height),
+                                                                 elementKind: UICollectionView.elementKindSectionHeader,
+                                                                 alignment: .top)
+        return header
+    }
 }
