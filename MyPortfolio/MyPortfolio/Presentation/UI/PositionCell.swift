@@ -31,14 +31,14 @@ class PositionCell: UICollectionViewCell {
     }
     
     //TODO: implement
-    func configure() {
+    func configure(position: Position) {
         colorView.backgroundColor = .yellow
-        nameLabel.text = "Name"
-        lastTradedPriceLabel.text = "last traded price"
-        quantityLabel.text = "quantity"
-        marketValueLabel.text = "market value"
-        pnlLabel.text = "pnl%"
-        pnlLabel.textColor = .green
+        nameLabel.text = position.instrument.name
+        lastTradedPriceLabel.text = String(format: "%.2f", position.instrument.lastTradedPrice)
+        quantityLabel.text = String(format: "%.2f", position.quantity)
+        marketValueLabel.text = String(format: "%.2f", position.marketValue)
+        pnlLabel.text = "\(String(format: "%.2f ", position.pnlPercentage))%"
+        pnlLabel.textColor = position.pnl > 0 ? .green : .red
     }
 }
 
@@ -92,10 +92,10 @@ extension PositionCell {
 
         NSLayoutConstraint.activate([
             colorView.widthAnchor.constraint(equalToConstant: 15),
-            colorView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            colorView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            mainStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset),
-            mainStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset),
+            colorView.topAnchor.constraint(equalTo: mainStack.topAnchor),
+            colorView.bottomAnchor.constraint(equalTo: mainStack.bottomAnchor),
+            mainStack.topAnchor.constraint(equalTo: contentView.topAnchor),
+            mainStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             mainStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             mainStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset)
         ])

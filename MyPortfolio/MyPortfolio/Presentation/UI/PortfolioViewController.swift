@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 class PortfolioViewController: UIViewController {
     private let viewModel: PortfolioViewModel
     private var collectionView: UICollectionView!
+    private var cancellables = Set<AnyCancellable>()
     
     init(viewModel: PortfolioViewModel) {
         self.viewModel = viewModel
@@ -24,6 +26,11 @@ class PortfolioViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .darkGray
         setupCollectionView()
+        viewModel.$portfolio
+            .sink { [weak self] _ in
+                self?.collectionView.reloadData()
+            }
+            .store(in: &cancellables)
         viewModel.startObserving()
     }
     
@@ -54,19 +61,19 @@ extension PortfolioViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //TODO: LANA - change
-        5
+        viewModel.portfolio.positions.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PositionCell.identifier, for: indexPath) as! PositionCell
-        cell.configure()
+        cell.configure(position: viewModel.portfolio.positions[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.identifier, for: indexPath) as! HeaderView
-        header.configure()
+        header.configure(balance: viewModel.portfolio.balance.netValue,
+                         pnl: viewModel.portfolio.balance.pnlPercentage)
         return header
     }
 }
