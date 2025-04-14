@@ -22,6 +22,7 @@ class PositionCell: UICollectionViewCell {
         backgroundColor = .gray
         layer.cornerRadius = 6
         layer.masksToBounds = true
+        setupSubviews()
         layout()
     }
     
@@ -37,72 +38,66 @@ class PositionCell: UICollectionViewCell {
         quantityLabel.text = "quantity"
         marketValueLabel.text = "market value"
         pnlLabel.text = "pnl%"
+        pnlLabel.textColor = .green
     }
 }
 
 extension PositionCell {
-    func layout() {
-        colorView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(colorView)
-        
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+    func setupSubviews() {
         nameLabel.adjustsFontForContentSizeCategory = true
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
         nameLabel.textColor = .label
-        contentView.addSubview(nameLabel)
         
-        lastTradedPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         lastTradedPriceLabel.adjustsFontForContentSizeCategory = true
         lastTradedPriceLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
         lastTradedPriceLabel.textColor = .secondaryLabel
-        contentView.addSubview(lastTradedPriceLabel)
-        
-        quantityLabel.translatesAutoresizingMaskIntoConstraints = false
+
         quantityLabel.adjustsFontForContentSizeCategory = true
         quantityLabel.font = UIFont.preferredFont(forTextStyle: .body)
         quantityLabel.textColor = .label
-        contentView.addSubview(quantityLabel)
-        
-        marketValueLabel.translatesAutoresizingMaskIntoConstraints = false
+
         marketValueLabel.adjustsFontForContentSizeCategory = true
         marketValueLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
         marketValueLabel.textColor = .purple
-        contentView.addSubview(marketValueLabel)
-        
-        pnlLabel.translatesAutoresizingMaskIntoConstraints = false
+
         pnlLabel.adjustsFontForContentSizeCategory = true
         pnlLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        pnlLabel.textColor = .green
-        contentView.addSubview(pnlLabel)
-        
-        setupConstraints()
     }
     
-    private func setupConstraints() {
+    func layout() {
+        let verticalSpacing = CGFloat(4)
+        let horizontalSpacing = CGFloat(8)
         let inset = CGFloat(10)
+        
+        let leftStack = UIStackView(arrangedSubviews: [nameLabel, lastTradedPriceLabel])
+        leftStack.axis = .vertical
+        leftStack.spacing = verticalSpacing
+        
+        let rightStackV = UIStackView(arrangedSubviews: [quantityLabel, marketValueLabel])
+        rightStackV.axis = .vertical
+        rightStackV.spacing = verticalSpacing
+        rightStackV.alignment = .trailing
+        
+        let rightStackH = UIStackView(arrangedSubviews: [pnlLabel, rightStackV])
+        rightStackH.axis = .horizontal
+        rightStackH.spacing = horizontalSpacing
+
+        let mainStack = UIStackView(arrangedSubviews: [colorView, leftStack, UIView(), rightStackH])
+        mainStack.axis = .horizontal
+        mainStack.spacing = horizontalSpacing
+        mainStack.alignment = .center
+        mainStack.translatesAutoresizingMaskIntoConstraints = false
+
+        contentView.addSubview(mainStack)
+
         NSLayoutConstraint.activate([
-            colorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            colorView.widthAnchor.constraint(equalToConstant: 15),
             colorView.topAnchor.constraint(equalTo: contentView.topAnchor),
             colorView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            colorView.widthAnchor.constraint(equalToConstant: 20),
-            
-            nameLabel.leadingAnchor.constraint(equalTo: colorView.trailingAnchor, constant: inset),
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset),
-            nameLabel.trailingAnchor.constraint(greaterThanOrEqualTo: pnlLabel.leadingAnchor, constant: inset),
-            
-            lastTradedPriceLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
-            lastTradedPriceLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: inset),
-            
-            quantityLabel.leadingAnchor.constraint(equalTo: pnlLabel.trailingAnchor, constant: inset),
-            quantityLabel.topAnchor.constraint(equalTo: nameLabel.topAnchor),
-            quantityLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
-            
-            marketValueLabel.trailingAnchor.constraint(equalTo: quantityLabel.trailingAnchor),
-            marketValueLabel.leadingAnchor.constraint(greaterThanOrEqualTo: lastTradedPriceLabel.trailingAnchor, constant: inset),
-            marketValueLabel.topAnchor.constraint(equalTo: lastTradedPriceLabel.topAnchor),
-            
-            pnlLabel.topAnchor.constraint(equalTo: nameLabel.topAnchor),
-            pnlLabel.bottomAnchor.constraint(equalTo: quantityLabel.bottomAnchor)
+            mainStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset),
+            mainStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset),
+            mainStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            mainStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset)
         ])
     }
 }
