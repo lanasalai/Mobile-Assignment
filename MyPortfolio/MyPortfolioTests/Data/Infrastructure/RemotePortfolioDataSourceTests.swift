@@ -40,6 +40,25 @@ final class RemotePortfolioDataSourceTests: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
     }
     
+    func test_fetchPortfolio_failsWithUnexpectedErrorOnNon200HttpStatus() {
+        let httpClient = HTTPClientSpy()
+        let expectedError = RemotePortfolioResponseMapper.Error.unexpectedError
+        let sut = RemotePortfolioDataSourceImpl(httpClient: httpClient, requestProvider: PortfolioRequestProviderStub())
+        let expectation = XCTestExpectation(description: "Wait for completion")
+        
+        sut.fetchPortfolio { result in
+            if case let .failure(error as RemotePortfolioResponseMapper.Error) = result {
+                XCTAssertEqual(error, expectedError)
+            } else {
+                XCTFail("Expected to fail with: \(expectedError)")
+            }
+            expectation.fulfill()
+        }
+        
+        httpClient.complete(withStatus: 400, data: Data())
+        wait(for: [expectation], timeout: 1.0)
+    }
+    
     // MARK: Helpers
     
     private final class HTTPClientSpy: HTTPClient {
@@ -54,6 +73,11 @@ final class RemotePortfolioDataSourceTests: XCTestCase {
         
         func complete(with error: Error, at index: Int = 0) {
             _messages[index].completion(.failure(error))
+        }
+        
+        func complete(withStatus status: Int, data: Data, at index: Int = 0) {
+            let response = HTTPURLResponse(url: messages[index].url!, statusCode: status, httpVersion: nil, headerFields: nil)!
+            _messages[index].completion(.success((data, response)))
         }
     }
     
