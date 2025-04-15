@@ -45,6 +45,7 @@
 		D4C696602DAED67F006604BC /* PositionUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6965F2DAED67F006604BC /* PositionUIModel.swift */; };
 		D4C696632DAEE00D006604BC /* ColorsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696622DAEE00D006604BC /* ColorsHelper.swift */; };
 		D4C696652DAEF02F006604BC /* CurrencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696642DAEF02F006604BC /* CurrencyHelper.swift */; };
+		D4C696692DAF0133006604BC /* RemotePortfolioDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696682DAF0133006604BC /* RemotePortfolioDataSourceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		D4C6965F2DAED67F006604BC /* PositionUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionUIModel.swift; sourceTree = "<group>"; };
 		D4C696622DAEE00D006604BC /* ColorsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsHelper.swift; sourceTree = "<group>"; };
 		D4C696642DAEF02F006604BC /* CurrencyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyHelper.swift; sourceTree = "<group>"; };
+		D4C696682DAF0133006604BC /* RemotePortfolioDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioDataSourceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		D4C695DA2DAA866F006604BC /* MyPortfolioTests */ = {
 			isa = PBXGroup;
 			children = (
+				D4C696662DAF0106006604BC /* Data */,
 			);
 			path = MyPortfolioTests;
 			sourceTree = "<group>";
@@ -334,6 +337,22 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		D4C696662DAF0106006604BC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696672DAF010C006604BC /* Infrastructure */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D4C696672DAF010C006604BC /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696682DAF0133006604BC /* RemotePortfolioDataSourceTests.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -387,6 +406,7 @@
 					};
 					D4C695D62DAA866F006604BC = {
 						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 						TestTargetID = D4C695C02DAA866D006604BC;
 					};
 				};
@@ -477,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C696692DAF0133006604BC /* RemotePortfolioDataSourceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +712,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -703,6 +725,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyPortfolio.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyPortfolio";
@@ -714,6 +737,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
