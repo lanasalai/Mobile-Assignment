@@ -22,37 +22,19 @@ final class RemotePortfolioDataSourceTests: XCTestCase {
     func test_fetchPortfolio_failsWithClientError() {
         let (sut, collaborators) = makeSUT()
         let expectedError = NSError(domain: "", code: 0)
-        let expectation = XCTestExpectation(description: "Wait for completion")
         
-        sut.fetchPortfolio { result in
-            if case let .failure(error as NSError) = result {
-                XCTAssertEqual(error, expectedError)
-            } else {
-                XCTFail("Expected to fail with: \(expectedError)")
-            }
-            expectation.fulfill()
+        expect(sut, toCompleteWith: .failure(expectedError)) {
+            collaborators.httpClient.complete(with: expectedError)
         }
-        
-        collaborators.httpClient.complete(with: expectedError)
-        wait(for: [expectation], timeout: 1.0)
     }
     
     func test_fetchPortfolio_failsWithUnexpectedErrorOnNon200HttpStatus() {
         let (sut, collaborators) = makeSUT()
         let expectedError = RemotePortfolioResponseMapper.Error.unexpectedError
-        let expectation = XCTestExpectation(description: "Wait for completion")
         
-        sut.fetchPortfolio { result in
-            if case let .failure(error as RemotePortfolioResponseMapper.Error) = result {
-                XCTAssertEqual(error, expectedError)
-            } else {
-                XCTFail("Expected to fail with: \(expectedError)")
-            }
-            expectation.fulfill()
+        expect(sut, toCompleteWith: .failure(expectedError)) {
+            collaborators.httpClient.complete(withStatus: 400, data: Data())
         }
-        
-        collaborators.httpClient.complete(withStatus: 400, data: Data())
-        wait(for: [expectation], timeout: 1.0)
     }
     
     // MARK: Helpers
@@ -69,6 +51,26 @@ final class RemotePortfolioDataSourceTests: XCTestCase {
                                                 requestProvider: requestProvider)
         let collaborators = Collaborators(httpClient: httpClient, requestProvider: requestProvider)
         return (sut, collaborators)
+    }
+    
+    private func expect(_ sut: RemotePortfolioDataSource, 
+                        toCompleteWith expectedResult: RemotePortfolioDataSource.Result,
+                        when action: () -> Void) {
+        let expectation = expectation(description: "Wait for completion")
+        sut.fetchPortfolio { receivedResult in
+            switch (receivedResult, expectedResult) {
+            case let (.failure(receivedError as NSError), .failure(expectedError as NSError)):
+                XCTAssertEqual(receivedError, expectedError)
+            case let (.failure(receivedError as RemotePortfolioResponseMapper.Error), .failure(expectedError as RemotePortfolioResponseMapper.Error)):
+                XCTAssertEqual(receivedError, expectedError)
+            default:
+                XCTFail("Expected \(expectedResult), received \(receivedResult)")
+            }
+            expectation.fulfill()
+        }
+        
+        action()
+        wait(for: [expectation], timeout: 1.0)
     }
     
     private final class HTTPClientSpy: HTTPClient {
