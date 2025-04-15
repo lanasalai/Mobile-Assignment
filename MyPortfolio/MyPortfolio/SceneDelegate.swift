@@ -25,7 +25,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                                        requestProvider: PortfolioURLRequestProvider(url: URL(string: "https://dummyjson.com/c/60b7-70a6-4ee3-bae8")!))
         let servicePublisher = RemotePortfolioSimulatedServicePublisher(dataSource: dataSource)
         let repository = PortfolioRepositoryImpl(service: servicePublisher)
-        let viewController = ViewController(repository: repository)
+        let useCase = ObserveSimulatedPortfolioUseCase(repository: repository)
+        let viewModel = PortfolioViewModel(observePortfolioUseCase: useCase)
+        let viewController = PortfolioViewController(viewModel: viewModel)
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }
