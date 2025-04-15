@@ -37,6 +37,15 @@ final class RemotePortfolioDataSourceTests: XCTestCase {
         }
     }
     
+    func test_fetchPortfolio_failsWithInvalidDataErrorOn200HttpStatus() {
+        let (sut, collaborators) = makeSUT()
+        let expectedError = RemotePortfolioResponseMapper.Error.invalidData
+        
+        expect(sut, toCompleteWith: .failure(expectedError)) {
+            collaborators.httpClient.complete(withStatus: 200, data: Data("invalid-data".utf8))
+        }
+    }
+    
     // MARK: Helpers
     
     private struct Collaborators {
