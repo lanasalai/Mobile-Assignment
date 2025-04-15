@@ -24,7 +24,7 @@ class PortfolioViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .darkGray
+        view.backgroundColor = MyColor.primaryBackground
         setupCollectionView()
         viewModel.$portfolio
             .sink { [weak self] _ in

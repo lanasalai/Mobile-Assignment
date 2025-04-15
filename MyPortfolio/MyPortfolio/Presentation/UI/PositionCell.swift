@@ -19,7 +19,7 @@ class PositionCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .gray
+        backgroundColor = MyColor.secondaryBackground
         layer.cornerRadius = 6
         layer.masksToBounds = true
         setupSubviews()
@@ -30,7 +30,6 @@ class PositionCell: UICollectionViewCell {
         fatalError("Not implemented")
     }
     
-    //TODO: implement
     func configure(position: PositionUIModel) {
         colorView.backgroundColor = position.color
         nameLabel.text = position.name
@@ -46,22 +45,22 @@ extension PositionCell {
     func setupSubviews() {
         nameLabel.adjustsFontForContentSizeCategory = true
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        nameLabel.textColor = .white
+        nameLabel.textColor = MyColor.primaryText
         
         lastTradedPriceLabel.adjustsFontForContentSizeCategory = true
         lastTradedPriceLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
-        lastTradedPriceLabel.textColor = .white
+        lastTradedPriceLabel.textColor = MyColor.secondaryText
 
         quantityLabel.adjustsFontForContentSizeCategory = true
         quantityLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        quantityLabel.textColor = .white
+        quantityLabel.textColor = MyColor.primaryText
 
         marketValueLabel.adjustsFontForContentSizeCategory = true
-        marketValueLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
-        marketValueLabel.textColor = .magenta
+        marketValueLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        marketValueLabel.textColor = MyColor.accentText
 
         pnlLabel.adjustsFontForContentSizeCategory = true
-        pnlLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        pnlLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
     }
     
     func layout() {

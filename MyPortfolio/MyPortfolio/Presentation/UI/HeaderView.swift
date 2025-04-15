@@ -33,7 +33,7 @@ extension HeaderView {
     func layout() {
         balanceLabel.adjustsFontForContentSizeCategory = true
         balanceLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
-        balanceLabel.textColor = .white
+        balanceLabel.textColor = MyColor.primaryText
         
         pnlLabel.adjustsFontForContentSizeCategory = true
         pnlLabel.font = UIFont.preferredFont(forTextStyle: .body)
