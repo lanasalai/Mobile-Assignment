@@ -47,6 +47,7 @@
 		D4C696652DAEF02F006604BC /* CurrencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696642DAEF02F006604BC /* CurrencyHelper.swift */; };
 		D4C696692DAF0133006604BC /* RemotePortfolioDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696682DAF0133006604BC /* RemotePortfolioDataSourceTests.swift */; };
 		D4C6966C2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6966B2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift */; };
+		D4C6966E2DAF2296006604BC /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6966D2DAF2296006604BC /* SharedTestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		D4C696642DAEF02F006604BC /* CurrencyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyHelper.swift; sourceTree = "<group>"; };
 		D4C696682DAF0133006604BC /* RemotePortfolioDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioDataSourceTests.swift; sourceTree = "<group>"; };
 		D4C6966B2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		D4C6966D2DAF2296006604BC /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				D4C6966B2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift */,
+				D4C6966D2DAF2296006604BC /* SharedTestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 			files = (
 				D4C696692DAF0133006604BC /* RemotePortfolioDataSourceTests.swift in Sources */,
 				D4C6966C2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				D4C6966E2DAF2296006604BC /* SharedTestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

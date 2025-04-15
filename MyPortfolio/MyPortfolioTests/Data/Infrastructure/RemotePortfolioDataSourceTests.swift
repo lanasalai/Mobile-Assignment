@@ -11,7 +11,7 @@ import XCTest
 final class RemotePortfolioDataSourceTests: XCTestCase {
     func test_fetchPortfolio_performsClientRequest() {
         let (sut, collaborators) = makeSUT()
-        let expectedRequest = URLRequest(url: URL(string: "any-url")!)
+        let expectedRequest = URLRequest(url: anyURL())
         collaborators.requestProvider.stub = expectedRequest
         
         sut.fetchPortfolio { _ in }
@@ -21,7 +21,7 @@ final class RemotePortfolioDataSourceTests: XCTestCase {
     
     func test_fetchPortfolio_failsWithClientError() {
         let (sut, collaborators) = makeSUT()
-        let expectedError = NSError(domain: "", code: 0)
+        let expectedError = anyNSError()
         
         expect(sut, toCompleteWith: .failure(expectedError)) {
             collaborators.httpClient.complete(with: expectedError)
@@ -66,7 +66,7 @@ final class RemotePortfolioDataSourceTests: XCTestCase {
         })
         
         sut = nil
-        httpClient.complete(with: NSError(domain: "", code: 0))
+        httpClient.complete(with: anyNSError())
         
         XCTAssertTrue(receivedResults.isEmpty)
     }
@@ -188,7 +188,7 @@ final class RemotePortfolioDataSourceTests: XCTestCase {
     }
     
     private final class PortfolioRequestProviderStub: URLRequestProvider {
-        var url: URL = URL(string: "any-url")!
+        var url: URL = anyURL()
         var httpMethod: MyPortfolio.HTTPMethod = .get
         var stub: URLRequest?
         
