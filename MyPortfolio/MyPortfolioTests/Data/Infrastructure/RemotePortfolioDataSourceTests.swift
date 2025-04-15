@@ -62,12 +62,18 @@ final class RemotePortfolioDataSourceTests: XCTestCase {
         let requestProvider: PortfolioRequestProviderStub
     }
     
-    private func makeSUT() -> (sut: RemotePortfolioDataSource, collaborators: Collaborators) {
+    private func makeSUT(file: StaticString = #file,
+                         line: UInt = #line) -> (sut: RemotePortfolioDataSource,
+                               collaborators: Collaborators) {
         let httpClient = HTTPClientSpy()
         let requestProvider = PortfolioRequestProviderStub()
         let sut = RemotePortfolioDataSourceImpl(httpClient: httpClient,
                                                 requestProvider: requestProvider)
         let collaborators = Collaborators(httpClient: httpClient, requestProvider: requestProvider)
+        
+        trackForMemoryLeaks(httpClient, file: file, line: line)
+        trackForMemoryLeaks(requestProvider, file: file, line: line)
+        trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, collaborators)
     }
     
