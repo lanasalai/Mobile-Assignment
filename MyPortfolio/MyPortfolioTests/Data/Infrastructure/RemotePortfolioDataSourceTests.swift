@@ -55,6 +55,22 @@ final class RemotePortfolioDataSourceTests: XCTestCase {
         }
     }
     
+    func test_fetchPortfolio_doesNotCompleteWhenSUTnstanceIsDeallocated() {
+        let httpClient = HTTPClientSpy()
+        var sut: RemotePortfolioDataSource? = RemotePortfolioDataSourceImpl(httpClient: httpClient,
+                                                                            requestProvider: PortfolioRequestProviderStub())
+        var receivedResults = [RemotePortfolioDataSource.Result]()
+        
+        sut?.fetchPortfolio({ result in
+            receivedResults.append(result)
+        })
+        
+        sut = nil
+        httpClient.complete(with: NSError(domain: "", code: 0))
+        
+        XCTAssertTrue(receivedResults.isEmpty)
+    }
+    
     // MARK: Helpers
     
     private struct Collaborators {
