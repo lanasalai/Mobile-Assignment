@@ -10,21 +10,18 @@ import XCTest
 
 final class RemotePortfolioDataSourceTests: XCTestCase {
     func test_fetchPortfolio_performsClientRequest() {
-        let httpClient = HTTPClientSpy()
+        let (sut, collaborators) = makeSUT()
         let expectedRequest = URLRequest(url: URL(string: "any-url")!)
-        let requestProvider = PortfolioRequestProviderStub()
-        requestProvider.stub = expectedRequest
-        let sut = RemotePortfolioDataSourceImpl(httpClient: httpClient, requestProvider: requestProvider)
+        collaborators.requestProvider.stub = expectedRequest
         
         sut.fetchPortfolio { _ in }
         
-        XCTAssertEqual(httpClient.messages, [expectedRequest])
+        XCTAssertEqual(collaborators.httpClient.messages, [expectedRequest])
     }
     
     func test_fetchPortfolio_failsWithClientError() {
-        let httpClient = HTTPClientSpy()
+        let (sut, collaborators) = makeSUT()
         let expectedError = NSError(domain: "", code: 0)
-        let sut = RemotePortfolioDataSourceImpl(httpClient: httpClient, requestProvider: PortfolioRequestProviderStub())
         let expectation = XCTestExpectation(description: "Wait for completion")
         
         sut.fetchPortfolio { result in
@@ -36,14 +33,13 @@ final class RemotePortfolioDataSourceTests: XCTestCase {
             expectation.fulfill()
         }
         
-        httpClient.complete(with: expectedError)
+        collaborators.httpClient.complete(with: expectedError)
         wait(for: [expectation], timeout: 1.0)
     }
     
     func test_fetchPortfolio_failsWithUnexpectedErrorOnNon200HttpStatus() {
-        let httpClient = HTTPClientSpy()
+        let (sut, collaborators) = makeSUT()
         let expectedError = RemotePortfolioResponseMapper.Error.unexpectedError
-        let sut = RemotePortfolioDataSourceImpl(httpClient: httpClient, requestProvider: PortfolioRequestProviderStub())
         let expectation = XCTestExpectation(description: "Wait for completion")
         
         sut.fetchPortfolio { result in
@@ -55,11 +51,25 @@ final class RemotePortfolioDataSourceTests: XCTestCase {
             expectation.fulfill()
         }
         
-        httpClient.complete(withStatus: 400, data: Data())
+        collaborators.httpClient.complete(withStatus: 400, data: Data())
         wait(for: [expectation], timeout: 1.0)
     }
     
     // MARK: Helpers
+    
+    private struct Collaborators {
+        let httpClient: HTTPClientSpy
+        let requestProvider: PortfolioRequestProviderStub
+    }
+    
+    private func makeSUT() -> (sut: RemotePortfolioDataSource, collaborators: Collaborators) {
+        let httpClient = HTTPClientSpy()
+        let requestProvider = PortfolioRequestProviderStub()
+        let sut = RemotePortfolioDataSourceImpl(httpClient: httpClient,
+                                                requestProvider: requestProvider)
+        let collaborators = Collaborators(httpClient: httpClient, requestProvider: requestProvider)
+        return (sut, collaborators)
+    }
     
     private final class HTTPClientSpy: HTTPClient {
         private var _messages = [(request: URLRequest, completion: (HTTPClient.Result) -> Void)]()
