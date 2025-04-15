@@ -23,9 +23,9 @@ class HeaderView: UICollectionReusableView {
     }
     
     //TODO: implement
-    func configure(balance: Double, pnl: Double) {
-        balanceLabel.text = String(format: "%.2f", balance)
-        pnlLabel.text = "\(String(format: "%.2f ", pnl))%"
+    func configure(balance: String, pnl: String) {
+        balanceLabel.text = balance
+        pnlLabel.text = pnl
         pnlLabel.textColor = .green
     }
 }

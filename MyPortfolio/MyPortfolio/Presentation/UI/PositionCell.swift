@@ -31,14 +31,14 @@ class PositionCell: UICollectionViewCell {
     }
     
     //TODO: implement
-    func configure(position: Position) {
-        colorView.backgroundColor = .yellow
-        nameLabel.text = position.instrument.name
-        lastTradedPriceLabel.text = String(format: "%.2f", position.instrument.lastTradedPrice)
-        quantityLabel.text = String(format: "%.2f", position.quantity)
-        marketValueLabel.text = String(format: "%.2f", position.marketValue)
-        pnlLabel.text = "\(String(format: "%.2f ", position.pnlPercentage))%"
-        pnlLabel.textColor = position.pnl > 0 ? .green : .red
+    func configure(position: PositionUIModel) {
+        colorView.backgroundColor = position.color
+        nameLabel.text = position.name
+        lastTradedPriceLabel.text = position.lastTradedPrice
+        quantityLabel.text = position.quantity
+        marketValueLabel.text = position.marketValue
+        pnlLabel.text = position.pnlPercentage
+        pnlLabel.textColor = .green
     }
 }
 

@@ -42,6 +42,10 @@
 		D4C696552DAD7B16006604BC /* PositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696542DAD7B16006604BC /* PositionCell.swift */; };
 		D4C696572DADA544006604BC /* CompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696562DADA544006604BC /* CompositionalLayout.swift */; };
 		D4C696592DADAC04006604BC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696582DADAC04006604BC /* HeaderView.swift */; };
+		D4C6965C2DAED3F7006604BC /* PortfolioUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6965B2DAED3F7006604BC /* PortfolioUIModel.swift */; };
+		D4C6965E2DAED653006604BC /* BalanceUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6965D2DAED653006604BC /* BalanceUIModel.swift */; };
+		D4C696602DAED67F006604BC /* PositionUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6965F2DAED67F006604BC /* PositionUIModel.swift */; };
+		D4C696632DAEE00D006604BC /* ColorsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696622DAEE00D006604BC /* ColorsHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +97,10 @@
 		D4C696542DAD7B16006604BC /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
 		D4C696562DADA544006604BC /* CompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayout.swift; sourceTree = "<group>"; };
 		D4C696582DADAC04006604BC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		D4C6965B2DAED3F7006604BC /* PortfolioUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioUIModel.swift; sourceTree = "<group>"; };
+		D4C6965D2DAED653006604BC /* BalanceUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceUIModel.swift; sourceTree = "<group>"; };
+		D4C6965F2DAED67F006604BC /* PositionUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionUIModel.swift; sourceTree = "<group>"; };
+		D4C696622DAEE00D006604BC /* ColorsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +308,8 @@
 		D4C696502DAD6AC4006604BC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D4C696612DAEDFF6006604BC /* Helpers */,
+				D4C6965A2DAED3DB006604BC /* Model */,
 				D4C696532DAD7AEF006604BC /* UI */,
 				D4C696512DAD6D3F006604BC /* PortfolioViewModel.swift */,
 			);
@@ -315,6 +325,24 @@
 				D4C696582DADAC04006604BC /* HeaderView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		D4C6965A2DAED3DB006604BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D4C6965B2DAED3F7006604BC /* PortfolioUIModel.swift */,
+				D4C6965D2DAED653006604BC /* BalanceUIModel.swift */,
+				D4C6965F2DAED67F006604BC /* PositionUIModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D4C696612DAEDFF6006604BC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696622DAEE00D006604BC /* ColorsHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,8 +453,10 @@
 				D4C695C92DAA866D006604BC /* PortfolioViewController.swift in Sources */,
 				D4C696032DAA8EF0006604BC /* URLSessionHTTPClient.swift in Sources */,
 				D4C696142DAA9DE7006604BC /* RemoteBalance.swift in Sources */,
+				D4C6965E2DAED653006604BC /* BalanceUIModel.swift in Sources */,
 				D4C6961C2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift in Sources */,
 				D4C696392DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift in Sources */,
+				D4C696632DAEE00D006604BC /* ColorsHelper.swift in Sources */,
 				D4C6961A2DAA9E64006604BC /* RemotePortfolioDataSource.swift in Sources */,
 				D4C696242DAABC38006604BC /* RemotePortfolioPublisher.swift in Sources */,
 				D4C6963D2DAB0A1B006604BC /* PortfolioRepository.swift in Sources */,
@@ -434,6 +464,7 @@
 				D4C696572DADA544006604BC /* CompositionalLayout.swift in Sources */,
 				D4C696592DADAC04006604BC /* HeaderView.swift in Sources */,
 				D4C695C52DAA866D006604BC /* AppDelegate.swift in Sources */,
+				D4C696602DAED67F006604BC /* PositionUIModel.swift in Sources */,
 				D4C696222DAAACDC006604BC /* PortfolioURLRequestProvider.swift in Sources */,
 				D4C696182DAA9E20006604BC /* RemoteInstrument.swift in Sources */,
 				D4C696432DAB0EAF006604BC /* Balance.swift in Sources */,
@@ -449,6 +480,7 @@
 				D4C696472DAB0EC1006604BC /* Instrument.swift in Sources */,
 				D4C696492DAC3063006604BC /* ObserveSimulatedPortfolioUseCase.swift in Sources */,
 				D4C6962A2DAAFAD9006604BC /* ManipulatedBalance.swift in Sources */,
+				D4C6965C2DAED3F7006604BC /* PortfolioUIModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@ class PortfolioViewModel {
     private let observePortfolioUseCase: ObserveSimulatedPortfolioUseCase
     private var cancellables = Set<AnyCancellable>()
     
-    @Published var portfolio: Portfolio = .empty
+    @Published var portfolio: PortfolioUIModel = .empty
     
     init(observePortfolioUseCase: ObserveSimulatedPortfolioUseCase) {
         self.observePortfolioUseCase = observePortfolioUseCase
@@ -20,13 +20,41 @@ class PortfolioViewModel {
     
     func startObserving() {
         observePortfolioUseCase.execute()
+            .map { $0.toUIModel() }
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { _ in}) { [weak self] in
-                self?.portfolio = $0 }
+                self?.portfolio = $0
+            }
             .store(in: &cancellables)
     }
 }
 
-extension Portfolio {
-    static let empty = Portfolio(balance: Balance(netValue: 0, pnl: 0, pnlPercentage: 0), positions: [])
+private extension Portfolio {
+    func toUIModel() -> PortfolioUIModel {
+        PortfolioUIModel(balance: balance.toUIModel(), positions: positions.map { $0.toUIModel() })
+    }
+}
+
+private extension Balance {
+    func toUIModel() -> BalanceUIModel {
+        BalanceUIModel(netValue: netValue.twoDecimalString(),
+                       pnlPercentage: "\(pnlPercentage.twoDecimalString()) %")
+    }
+}
+
+private extension Position {
+    func toUIModel() -> PositionUIModel {
+        PositionUIModel(name: instrument.name,
+                        color: Ticker(rawValue: instrument.ticker)?.color ?? .clear,
+                        lastTradedPrice: instrument.lastTradedPrice.twoDecimalString(),
+                        quantity: "\(quantity.twoDecimalString()) \(instrument.ticker)",
+                        marketValue: marketValue.twoDecimalString(),
+                        pnlPercentage: "\(pnlPercentage.twoDecimalString()) %")
+    }
+}
+
+private extension Double {
+    func twoDecimalString() -> String {
+        String(format: "%0.2f", self)
+    }
 }
