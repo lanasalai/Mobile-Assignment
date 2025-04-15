@@ -46,6 +46,15 @@ final class RemotePortfolioDataSourceTests: XCTestCase {
         }
     }
     
+    func test_fetchPortfolio_deliversPortfolioOn200HttpStatus() throws {
+        let (sut, collaborators) = makeSUT()
+        let (expectedPortfolio, data) = try makePortfolioData()
+        
+        expect(sut, toCompleteWith: .success(expectedPortfolio)) {
+            collaborators.httpClient.complete(withStatus: 200, data: data)
+        }
+    }
+    
     // MARK: Helpers
     
     private struct Collaborators {
@@ -72,6 +81,8 @@ final class RemotePortfolioDataSourceTests: XCTestCase {
                 XCTAssertEqual(receivedError, expectedError)
             case let (.failure(receivedError as RemotePortfolioResponseMapper.Error), .failure(expectedError as RemotePortfolioResponseMapper.Error)):
                 XCTAssertEqual(receivedError, expectedError)
+            case let (.success(receivedPortfolio), .success(expectedPortfolio)):
+                XCTAssertEqual(receivedPortfolio, expectedPortfolio)
             default:
                 XCTFail("Expected \(expectedResult), received \(receivedResult)")
             }
@@ -80,6 +91,58 @@ final class RemotePortfolioDataSourceTests: XCTestCase {
         
         action()
         wait(for: [expectation], timeout: 1.0)
+    }
+    
+    private func makePortfolioData() throws -> (model: RemotePortfolio, json: Data) {
+        let doubleValue = 12345.00
+        let instrument = RemoteInstrument(ticker: UUID().uuidString,
+                                          name: UUID().uuidString,
+                                          exchange: UUID().uuidString,
+                                          currency: UUID().uuidString,
+                                          lastTradedPrice: doubleValue)
+        let position = RemotePosition(instrument: instrument, 
+                                      quantity: doubleValue,
+                                      averagePrice: doubleValue,
+                                      cost: doubleValue,
+                                      marketValue: doubleValue,
+                                      pnl: doubleValue,
+                                      pnlPercentage: doubleValue)
+        let balance = RemoteBalance(netValue: doubleValue, 
+                                    pnl: doubleValue,
+                                    pnlPercentage: doubleValue)
+        let portfolio = RemotePortfolio(balance: balance, 
+                                        positions: [position])
+        
+        var instrumentJson: [String: Any] = [:]
+        instrumentJson["ticker"] = instrument.ticker
+        instrumentJson["name"] = instrument.name
+        instrumentJson["exchange"] = instrument.exchange
+        instrumentJson["currency"] = instrument.currency
+        instrumentJson["lastTradedPrice"] = instrument.lastTradedPrice
+        
+        var positionJson: [String: Any] = [:]
+        positionJson["instrument"] = instrumentJson
+        positionJson["quantity"] = position.quantity
+        positionJson["averagePrice"] = position.averagePrice
+        positionJson["cost"] = position.cost
+        positionJson["marketValue"] = position.marketValue
+        positionJson["pnl"] = position.pnl
+        positionJson["pnlPercentage"] = position.pnlPercentage
+        
+        var balanceJson: [String: Any] = [:]
+        balanceJson["netValue"] = balance.netValue
+        balanceJson["pnl"] = balance.pnl
+        balanceJson["pnlPercentage"] = balance.pnlPercentage
+        
+        var portfolioJson: [String: Any] = [:]
+        portfolioJson["balance"] = balanceJson
+        portfolioJson["positions"] = [positionJson]
+        
+        var json: [String: Any] = [:]
+        json["portfolio"] = portfolioJson
+        
+        let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+        return (portfolio, jsonData)
     }
     
     private final class HTTPClientSpy: HTTPClient {

@@ -5,7 +5,7 @@
 //  Created by Lana Salai on 12.4.25..
 //
 
-struct RemotePosition: Decodable {
+struct RemotePosition: Decodable, Equatable {
     let instrument: RemoteInstrument
     let quantity: Double
     let averagePrice: Double
