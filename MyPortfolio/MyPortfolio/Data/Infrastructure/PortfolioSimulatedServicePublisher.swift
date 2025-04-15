@@ -1,5 +1,5 @@
 //
-//  RemotePortfolioSimulatedServicePublisher.swift
+//  PortfolioSimulatedServicePublisher.swift
 //  MyPortfolio
 //
 //  Created by Lana Salai on 12.4.25..
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class RemotePortfolioSimulatedServicePublisher: RemotePortfolioPublisher {
+class PortfolioSimulatedServicePublisher: PortfolioPublisher {
     private let dataSource: RemotePortfolioDataSource
     private let subject = PassthroughSubject<ManipulatedPortfolio, Error>()
     private var timer: AnyCancellable?

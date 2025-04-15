@@ -12,7 +12,6 @@
 		D4C695C92DAA866D006604BC /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C695C82DAA866D006604BC /* PortfolioViewController.swift */; };
 		D4C695CE2DAA866E006604BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C695CD2DAA866E006604BC /* Assets.xcassets */; };
 		D4C695D12DAA866E006604BC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D4C695D02DAA866E006604BC /* Base */; };
-		D4C695DC2DAA866F006604BC /* MyPortfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C695DB2DAA866F006604BC /* MyPortfolioTests.swift */; };
 		D4C696012DAA8E29006604BC /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696002DAA8E29006604BC /* HTTPClient.swift */; };
 		D4C696032DAA8EF0006604BC /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696022DAA8EF0006604BC /* URLSessionHTTPClient.swift */; };
 		D4C696122DAA9C0C006604BC /* RemotePortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696112DAA9C0C006604BC /* RemotePortfolio.swift */; };
@@ -23,14 +22,13 @@
 		D4C6961C2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */; };
 		D4C6961E2DAAAB6E006604BC /* URLRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6961D2DAAAB6E006604BC /* URLRequestProvider.swift */; };
 		D4C696222DAAACDC006604BC /* PortfolioURLRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */; };
-		D4C696242DAABC38006604BC /* RemotePortfolioPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696232DAABC38006604BC /* RemotePortfolioPublisher.swift */; };
+		D4C696242DAABC38006604BC /* PortfolioPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696232DAABC38006604BC /* PortfolioPublisher.swift */; };
 		D4C696282DAADD61006604BC /* ManipulatedPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696272DAADD61006604BC /* ManipulatedPortfolio.swift */; };
 		D4C6962A2DAAFAD9006604BC /* ManipulatedBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696292DAAFAD9006604BC /* ManipulatedBalance.swift */; };
 		D4C6962C2DAAFB18006604BC /* ManipulatedPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6962B2DAAFB18006604BC /* ManipulatedPosition.swift */; };
 		D4C6962E2DAAFB3B006604BC /* ManipulatedInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6962D2DAAFB3B006604BC /* ManipulatedInstrument.swift */; };
 		D4C696342DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */; };
-		D4C696372DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696362DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift */; };
-		D4C696392DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696382DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift */; };
+		D4C696392DAAFC77006604BC /* PortfolioSimulatedServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696382DAAFC77006604BC /* PortfolioSimulatedServicePublisher.swift */; };
 		D4C6963D2DAB0A1B006604BC /* PortfolioRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6963C2DAB0A1B006604BC /* PortfolioRepository.swift */; };
 		D4C6963F2DAB0A40006604BC /* PortfolioRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6963E2DAB0A40006604BC /* PortfolioRepositoryImpl.swift */; };
 		D4C696412DAB0EA5006604BC /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696402DAB0EA5006604BC /* Portfolio.swift */; };
@@ -68,7 +66,6 @@
 		D4C695D02DAA866E006604BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4C695D22DAA866E006604BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4C695D72DAA866F006604BC /* MyPortfolioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPortfolioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4C695DB2DAA866F006604BC /* MyPortfolioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioTests.swift; sourceTree = "<group>"; };
 		D4C696002DAA8E29006604BC /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D4C696022DAA8EF0006604BC /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		D4C696112DAA9C0C006604BC /* RemotePortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolio.swift; sourceTree = "<group>"; };
@@ -79,14 +76,13 @@
 		D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioResponseMapper.swift; sourceTree = "<group>"; };
 		D4C6961D2DAAAB6E006604BC /* URLRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestProvider.swift; sourceTree = "<group>"; };
 		D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioURLRequestProvider.swift; sourceTree = "<group>"; };
-		D4C696232DAABC38006604BC /* RemotePortfolioPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioPublisher.swift; sourceTree = "<group>"; };
+		D4C696232DAABC38006604BC /* PortfolioPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioPublisher.swift; sourceTree = "<group>"; };
 		D4C696272DAADD61006604BC /* ManipulatedPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulatedPortfolio.swift; sourceTree = "<group>"; };
 		D4C696292DAAFAD9006604BC /* ManipulatedBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulatedBalance.swift; sourceTree = "<group>"; };
 		D4C6962B2DAAFB18006604BC /* ManipulatedPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulatedPosition.swift; sourceTree = "<group>"; };
 		D4C6962D2DAAFB3B006604BC /* ManipulatedInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulatedInstrument.swift; sourceTree = "<group>"; };
 		D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioDataSourceImpl.swift; sourceTree = "<group>"; };
-		D4C696362DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioSimplePublisher.swift; sourceTree = "<group>"; };
-		D4C696382DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioSimulatedServicePublisher.swift; sourceTree = "<group>"; };
+		D4C696382DAAFC77006604BC /* PortfolioSimulatedServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioSimulatedServicePublisher.swift; sourceTree = "<group>"; };
 		D4C6963C2DAB0A1B006604BC /* PortfolioRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioRepository.swift; sourceTree = "<group>"; };
 		D4C6963E2DAB0A40006604BC /* PortfolioRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioRepositoryImpl.swift; sourceTree = "<group>"; };
 		D4C696402DAB0EA5006604BC /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
@@ -160,7 +156,6 @@
 		D4C695DA2DAA866F006604BC /* MyPortfolioTests */ = {
 			isa = PBXGroup;
 			children = (
-				D4C695DB2DAA866F006604BC /* MyPortfolioTests.swift */,
 			);
 			path = MyPortfolioTests;
 			sourceTree = "<group>";
@@ -281,7 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				D4C696192DAA9E64006604BC /* RemotePortfolioDataSource.swift */,
-				D4C696232DAABC38006604BC /* RemotePortfolioPublisher.swift */,
+				D4C696232DAABC38006604BC /* PortfolioPublisher.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -289,22 +284,13 @@
 		D4C696302DAAFB7A006604BC /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				D4C696352DAAFC22006604BC /* Publishers */,
+				D4C696382DAAFC77006604BC /* PortfolioSimulatedServicePublisher.swift */,
 				D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */,
 				D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */,
 				D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */,
 				D4C6963E2DAB0A40006604BC /* PortfolioRepositoryImpl.swift */,
 			);
 			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		D4C696352DAAFC22006604BC /* Publishers */ = {
-			isa = PBXGroup;
-			children = (
-				D4C696362DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift */,
-				D4C696382DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift */,
-			);
-			path = Publishers;
 			sourceTree = "<group>";
 		};
 		D4C696502DAD6AC4006604BC /* Presentation */ = {
@@ -458,11 +444,11 @@
 				D4C696142DAA9DE7006604BC /* RemoteBalance.swift in Sources */,
 				D4C6965E2DAED653006604BC /* BalanceUIModel.swift in Sources */,
 				D4C6961C2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift in Sources */,
-				D4C696392DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift in Sources */,
+				D4C696392DAAFC77006604BC /* PortfolioSimulatedServicePublisher.swift in Sources */,
 				D4C696632DAEE00D006604BC /* ColorsHelper.swift in Sources */,
 				D4C6961A2DAA9E64006604BC /* RemotePortfolioDataSource.swift in Sources */,
 				D4C696652DAEF02F006604BC /* CurrencyHelper.swift in Sources */,
-				D4C696242DAABC38006604BC /* RemotePortfolioPublisher.swift in Sources */,
+				D4C696242DAABC38006604BC /* PortfolioPublisher.swift in Sources */,
 				D4C6963D2DAB0A1B006604BC /* PortfolioRepository.swift in Sources */,
 				D4C6963F2DAB0A40006604BC /* PortfolioRepositoryImpl.swift in Sources */,
 				D4C696572DADA544006604BC /* CompositionalLayout.swift in Sources */,
@@ -473,7 +459,6 @@
 				D4C696182DAA9E20006604BC /* RemoteInstrument.swift in Sources */,
 				D4C696432DAB0EAF006604BC /* Balance.swift in Sources */,
 				D4C6962C2DAAFB18006604BC /* ManipulatedPosition.swift in Sources */,
-				D4C696372DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift in Sources */,
 				D4C696342DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift in Sources */,
 				D4C696452DAB0EB7006604BC /* Position.swift in Sources */,
 				D4C696012DAA8E29006604BC /* HTTPClient.swift in Sources */,
@@ -492,7 +477,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4C695DC2DAA866F006604BC /* MyPortfolioTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
