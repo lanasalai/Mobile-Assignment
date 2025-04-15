@@ -22,11 +22,10 @@ class HeaderView: UICollectionReusableView {
         fatalError("Not implemented")
     }
     
-    //TODO: implement
-    func configure(balance: String, pnl: String) {
-        balanceLabel.text = balance
-        pnlLabel.text = pnl
-        pnlLabel.textColor = .green
+    func configure(balance: BalanceUIModel) {
+        balanceLabel.text = balance.netValue
+        pnlLabel.text = balance.pnlPercentage
+        pnlLabel.textColor = balance.pnlColor
     }
 }
 

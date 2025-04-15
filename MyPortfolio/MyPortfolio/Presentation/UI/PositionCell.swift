@@ -38,7 +38,7 @@ class PositionCell: UICollectionViewCell {
         quantityLabel.text = position.quantity
         marketValueLabel.text = position.marketValue
         pnlLabel.text = position.pnlPercentage
-        pnlLabel.textColor = .green
+        pnlLabel.textColor = position.pnlColor
     }
 }
 

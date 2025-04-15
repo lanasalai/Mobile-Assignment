@@ -14,4 +14,5 @@ struct PositionUIModel {
     let quantity: String
     let marketValue: String
     let pnlPercentage: String
+    let pnlColor: UIColor
 }

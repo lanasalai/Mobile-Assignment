@@ -11,5 +11,5 @@ struct PortfolioUIModel {
 }
 
 extension PortfolioUIModel {
-    static let empty = PortfolioUIModel(balance: BalanceUIModel(netValue: "", pnlPercentage: ""), positions: [])
+    static let empty = PortfolioUIModel(balance: BalanceUIModel(netValue: "", pnlPercentage: "", pnlColor: .clear), positions: [])
 }

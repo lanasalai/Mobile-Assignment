@@ -38,7 +38,8 @@ private extension Portfolio {
 private extension Balance {
     func toUIModel() -> BalanceUIModel {
         BalanceUIModel(netValue: netValue.twoDecimalString(),
-                       pnlPercentage: "\(pnlPercentage.twoDecimalString()) %")
+                       pnlPercentage: "\(pnlPercentage.twoDecimalString()) %",
+                       pnlColor: pnlPercentage > 0 ? .green : .red)
     }
 }
 
@@ -49,7 +50,8 @@ private extension Position {
                         lastTradedPrice: instrument.lastTradedPrice.twoDecimalString(),
                         quantity: "\(quantity.twoDecimalString()) \(instrument.ticker)",
                         marketValue: marketValue.twoDecimalString(),
-                        pnlPercentage: "\(pnlPercentage.twoDecimalString()) %")
+                        pnlPercentage: "\(pnlPercentage.twoDecimalString()) %",
+                        pnlColor: pnlPercentage > 0 ? .green : .red)
     }
 }
 
