@@ -10,7 +10,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
+    var portfolioCoordinator: Coordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -24,20 +25,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 #endif
         guard let windowScene = (scene as? UIWindowScene) else { return }
+
+        let navigationController = UINavigationController()
+        portfolioCoordinator = PortfolioCoordinator(navigationController: navigationController)
+        portfolioCoordinator?.start()
         
         window = UIWindow(windowScene: windowScene)
-        
-        //TODO: remove
-        let dataSource = RemotePortfolioDataSourceImpl(httpClient: URLSessionHTTPClient(),
-                                                       requestProvider: PortfolioURLRequestProvider(url: URL(string: "https://dummyjson.com/c/60b7-70a6-4ee3-bae8")!))
-        let servicePublisher = PortfolioSimulatedServicePublisher(dataSource: dataSource, simulationService: PercentagesSimulationServiceImpl(generatePercentage: {
-            Bool.random() ? 0.1 : -0.1
-        }))
-        let repository = PortfolioRepositoryImpl(service: servicePublisher)
-        let useCase = ObserveSimulatedPortfolioUseCase(repository: repository)
-        let viewModel = PortfolioViewModel(observePortfolioUseCase: useCase)
-        let viewController = PortfolioViewController(viewModel: viewModel)
-        window?.rootViewController = viewController
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 
