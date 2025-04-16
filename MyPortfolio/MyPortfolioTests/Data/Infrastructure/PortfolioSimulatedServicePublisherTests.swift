@@ -88,64 +88,6 @@ final class PortfolioSimulatedServicePublisherTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private final class PercentagesSimulationServiceStub: PercentagesSimulationService {
-        var stub: [Double]?
-        
-        func generatePercentagesPublisher(count: Int) -> AnyPublisher<[Double], Never> {
-            guard let percentages = stub else {
-                fatalError("Stub value is missing")
-            }
-            return Just(percentages).eraseToAnyPublisher()
-        }
-    }
-    
-    private final class PercentagesSimulationServiceSpy: PercentagesSimulationService {
-        var messages = [Message]()
-        
-        enum Message: Equatable {
-            case generatePercentagesPublisher(count: Int)
-        }
-        
-        func generatePercentagesPublisher(count: Int) -> AnyPublisher<[Double], Never> {
-            messages.append(.generatePercentagesPublisher(count: count))
-            return Just([]).eraseToAnyPublisher()
-        }
-    }
-    
-    private final class RemotePortfolioDataSourceStub: RemotePortfolioDataSource {
-        var stub: RemotePortfolio?
-        
-        func fetchPortfolio(_ completion: @escaping (RemotePortfolioDataSource.Result) -> Void) {
-            guard let portfolio = stub else {
-                fatalError("Stub value is missing")
-            }
-            completion(.success(portfolio))
-        }
-    }
-    
-    private final class RemotePortfolioDataSourceSpy: RemotePortfolioDataSource {
-        private var _messages = [(message: Message, completion: (RemotePortfolioDataSource.Result) -> Void)]()
-        var messages: [Message] {
-            _messages.map(\.message)
-        }
-        
-        enum Message: Equatable {
-            case fetchPortfolio
-        }
-        
-        func fetchPortfolio(_ completion: @escaping (RemotePortfolioDataSource.Result) -> Void) {
-            _messages.append((message: .fetchPortfolio, completion: completion))
-        }
-        
-        func complete(with error: Error, at index: Int = 0) {
-            _messages[index].completion(.failure(error))
-        }
-        
-        func complete(with remotePortfolio: RemotePortfolio, at index: Int = 0) {
-            _messages[index].completion(.success(remotePortfolio))
-        }
-    }
-    
     private func makeRemotePortfolio() -> RemotePortfolio {
         let instrument = RemoteInstrument(ticker: UUID().uuidString,
                                           name: UUID().uuidString,

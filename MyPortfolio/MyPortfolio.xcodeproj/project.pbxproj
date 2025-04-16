@@ -51,6 +51,12 @@
 		D4C696712DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696702DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift */; };
 		D4C696752DB003C2006604BC /* PercentagesSimulationServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696742DB003C2006604BC /* PercentagesSimulationServiceImpl.swift */; };
 		D4C696772DB00A9C006604BC /* PercentagesSimulationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696762DB00A9C006604BC /* PercentagesSimulationService.swift */; };
+		D4C6967F2DB033C7006604BC /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6967E2DB033C7006604BC /* HTTPClientSpy.swift */; };
+		D4C696812DB03423006604BC /* PortfolioRequestProviderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696802DB03423006604BC /* PortfolioRequestProviderStub.swift */; };
+		D4C696832DB03476006604BC /* RemotePortfolioDataSourceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696822DB03476006604BC /* RemotePortfolioDataSourceSpy.swift */; };
+		D4C696852DB034A4006604BC /* RemotePortfolioDataSourceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696842DB034A4006604BC /* RemotePortfolioDataSourceStub.swift */; };
+		D4C696872DB034C4006604BC /* PercentagesSimulationServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696862DB034C4006604BC /* PercentagesSimulationServiceSpy.swift */; };
+		D4C696892DB034ED006604BC /* PercentagesSimulationServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696882DB034ED006604BC /* PercentagesSimulationServiceStub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +118,12 @@
 		D4C696702DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioSimulatedServicePublisherTests.swift; sourceTree = "<group>"; };
 		D4C696742DB003C2006604BC /* PercentagesSimulationServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentagesSimulationServiceImpl.swift; sourceTree = "<group>"; };
 		D4C696762DB00A9C006604BC /* PercentagesSimulationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentagesSimulationService.swift; sourceTree = "<group>"; };
+		D4C6967E2DB033C7006604BC /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
+		D4C696802DB03423006604BC /* PortfolioRequestProviderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioRequestProviderStub.swift; sourceTree = "<group>"; };
+		D4C696822DB03476006604BC /* RemotePortfolioDataSourceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioDataSourceSpy.swift; sourceTree = "<group>"; };
+		D4C696842DB034A4006604BC /* RemotePortfolioDataSourceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioDataSourceStub.swift; sourceTree = "<group>"; };
+		D4C696862DB034C4006604BC /* PercentagesSimulationServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentagesSimulationServiceSpy.swift; sourceTree = "<group>"; };
+		D4C696882DB034ED006604BC /* PercentagesSimulationServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentagesSimulationServiceStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,6 +375,7 @@
 		D4C696672DAF010C006604BC /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				D4C6967D2DB033A2006604BC /* Helpers */,
 				D4C696682DAF0133006604BC /* RemotePortfolioDataSourceTests.swift */,
 				D4C696702DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift */,
 			);
@@ -374,6 +387,19 @@
 			children = (
 				D4C6966B2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift */,
 				D4C6966D2DAF2296006604BC /* SharedTestHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D4C6967D2DB033A2006604BC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D4C6967E2DB033C7006604BC /* HTTPClientSpy.swift */,
+				D4C696802DB03423006604BC /* PortfolioRequestProviderStub.swift */,
+				D4C696822DB03476006604BC /* RemotePortfolioDataSourceSpy.swift */,
+				D4C696842DB034A4006604BC /* RemotePortfolioDataSourceStub.swift */,
+				D4C696862DB034C4006604BC /* PercentagesSimulationServiceSpy.swift */,
+				D4C696882DB034ED006604BC /* PercentagesSimulationServiceStub.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -525,9 +551,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4C696712DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift in Sources */,
+				D4C696852DB034A4006604BC /* RemotePortfolioDataSourceStub.swift in Sources */,
 				D4C696692DAF0133006604BC /* RemotePortfolioDataSourceTests.swift in Sources */,
 				D4C6966C2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				D4C6966E2DAF2296006604BC /* SharedTestHelpers.swift in Sources */,
+				D4C696812DB03423006604BC /* PortfolioRequestProviderStub.swift in Sources */,
+				D4C6967F2DB033C7006604BC /* HTTPClientSpy.swift in Sources */,
+				D4C696872DB034C4006604BC /* PercentagesSimulationServiceSpy.swift in Sources */,
+				D4C696892DB034ED006604BC /* PercentagesSimulationServiceStub.swift in Sources */,
+				D4C696832DB03476006604BC /* RemotePortfolioDataSourceSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
