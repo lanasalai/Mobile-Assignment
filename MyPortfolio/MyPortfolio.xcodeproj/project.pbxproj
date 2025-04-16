@@ -49,6 +49,8 @@
 		D4C6966C2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6966B2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift */; };
 		D4C6966E2DAF2296006604BC /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6966D2DAF2296006604BC /* SharedTestHelpers.swift */; };
 		D4C696712DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696702DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift */; };
+		D4C696752DB003C2006604BC /* PercentagesSimulationServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696742DB003C2006604BC /* PercentagesSimulationServiceImpl.swift */; };
+		D4C696772DB00A9C006604BC /* PercentagesSimulationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696762DB00A9C006604BC /* PercentagesSimulationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,8 @@
 		D4C6966D2DAF2296006604BC /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		D4C6966F2DAFB16A006604BC /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 		D4C696702DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioSimulatedServicePublisherTests.swift; sourceTree = "<group>"; };
+		D4C696742DB003C2006604BC /* PercentagesSimulationServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentagesSimulationServiceImpl.swift; sourceTree = "<group>"; };
+		D4C696762DB00A9C006604BC /* PercentagesSimulationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentagesSimulationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +293,7 @@
 			children = (
 				D4C696192DAA9E64006604BC /* RemotePortfolioDataSource.swift */,
 				D4C696232DAABC38006604BC /* PortfolioPublisher.swift */,
+				D4C696762DB00A9C006604BC /* PercentagesSimulationService.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 				D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */,
 				D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */,
 				D4C6963E2DAB0A40006604BC /* PortfolioRepositoryImpl.swift */,
+				D4C696742DB003C2006604BC /* PercentagesSimulationServiceImpl.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -483,6 +489,7 @@
 				D4C696142DAA9DE7006604BC /* RemoteBalance.swift in Sources */,
 				D4C6965E2DAED653006604BC /* BalanceUIModel.swift in Sources */,
 				D4C6961C2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift in Sources */,
+				D4C696772DB00A9C006604BC /* PercentagesSimulationService.swift in Sources */,
 				D4C696392DAAFC77006604BC /* PortfolioSimulatedServicePublisher.swift in Sources */,
 				D4C696632DAEE00D006604BC /* ColorsHelper.swift in Sources */,
 				D4C6961A2DAA9E64006604BC /* RemotePortfolioDataSource.swift in Sources */,
@@ -507,6 +514,7 @@
 				D4C696522DAD6D3F006604BC /* PortfolioViewModel.swift in Sources */,
 				D4C696472DAB0EC1006604BC /* Instrument.swift in Sources */,
 				D4C696492DAC3063006604BC /* ObserveSimulatedPortfolioUseCase.swift in Sources */,
+				D4C696752DB003C2006604BC /* PercentagesSimulationServiceImpl.swift in Sources */,
 				D4C6962A2DAAFAD9006604BC /* ManipulatedBalance.swift in Sources */,
 				D4C6965C2DAED3F7006604BC /* PortfolioUIModel.swift in Sources */,
 			);
@@ -598,7 +606,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -655,7 +663,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -679,7 +687,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -711,7 +719,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -738,7 +746,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanasalai.MyPortfolioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -763,7 +771,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanasalai.MyPortfolioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

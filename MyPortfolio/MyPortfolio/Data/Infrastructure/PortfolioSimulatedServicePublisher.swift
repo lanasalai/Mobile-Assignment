@@ -10,11 +10,13 @@ import Combine
 
 class PortfolioSimulatedServicePublisher: PortfolioPublisher {
     private let dataSource: RemotePortfolioDataSource
+    private let simulationService: PercentagesSimulationService
     private let subject = PassthroughSubject<ManipulatedPortfolio, Error>()
-    private var timer: AnyCancellable?
+    private var cancellables = Set<AnyCancellable>()
     
-    init(dataSource: RemotePortfolioDataSource) {
+    init(dataSource: RemotePortfolioDataSource, simulationService: PercentagesSimulationService) {
         self.dataSource = dataSource
+        self.simulationService = simulationService
     }
     
     func fetchPortfolioPublisher() -> AnyPublisher<ManipulatedPortfolio, any Error> {
@@ -25,23 +27,15 @@ class PortfolioSimulatedServicePublisher: PortfolioPublisher {
             case let .failure(error):
                 self.subject.send(completion: .failure(error))
             case let .success(remotePortfolio):
-                self.startSimulation(with: remotePortfolio)
+                self.simulationService.generatePercentagesPublisher(count: remotePortfolio.positions.count)
+                    .sink { percentages in
+                        let manipulatedPortfolio = remotePortfolio.manipulate(priceChanges: percentages)
+                        self.subject.send(manipulatedPortfolio)
+                    }
+                    .store(in: &cancellables)
             }
         }
-        
         return subject.eraseToAnyPublisher()
-    }
-    
-    private func startSimulation(with initial: RemotePortfolio) {
-        timer = Timer.publish(every: 1.0, on: .main, in: .common)
-            .autoconnect()
-            .sink(receiveValue: { [weak self] _ in
-                guard let self = self else { return }
-                let priceChanges = (0..<initial.positions.count).map { _ in
-                    Bool.random() ? -0.1 : 0.1
-                }
-                self.subject.send(initial.manipulate(priceChanges: priceChanges))
-            })
     }
 }
 
@@ -61,7 +55,6 @@ private extension RemotePosition {
     }
 }
 
-//(Bool.random() ? -0.1 : 0.1)
 private extension RemoteInstrument {
     func manipulate(priceChangePercentage change: Double) -> ManipulatedInstrument {
         let newTradedPrice = lastTradedPrice * (1.0 + change)
