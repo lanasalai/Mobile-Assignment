@@ -37,29 +37,34 @@ class PortfolioSimulatedServicePublisher: PortfolioPublisher {
             .autoconnect()
             .sink(receiveValue: { [weak self] _ in
                 guard let self = self else { return }
-                self.subject.send(initial.manipulate())
+                let priceChanges = (0..<initial.positions.count).map { _ in
+                    Bool.random() ? -0.1 : 0.1
+                }
+                self.subject.send(initial.manipulate(priceChanges: priceChanges))
             })
     }
 }
 
 private extension RemotePortfolio {
-    func manipulate() -> ManipulatedPortfolio {
-        ManipulatedPortfolio(positions: positions.map { $0.manipulate() })
+    func manipulate(priceChanges: [Double]) -> ManipulatedPortfolio {
+        ManipulatedPortfolio(positions: positions.enumerated().map { index, position in
+            position.manipulate(priceChangePercentage: priceChanges[index]) })
     }
 }
 
 private extension RemotePosition {
-    func manipulate() -> ManipulatedPosition {
-        ManipulatedPosition(instrument: instrument.manipulate(),
+    func manipulate(priceChangePercentage change: Double) -> ManipulatedPosition {
+        ManipulatedPosition(instrument: instrument.manipulate(priceChangePercentage: change),
                             quantity: quantity,
                             averagePrice: averagePrice,
                             cost: cost)
     }
 }
 
+//(Bool.random() ? -0.1 : 0.1)
 private extension RemoteInstrument {
-    func manipulate() -> ManipulatedInstrument {
-        let newTradedPrice = lastTradedPrice * (1.0 + (Bool.random() ? -0.1 : 0.1))
+    func manipulate(priceChangePercentage change: Double) -> ManipulatedInstrument {
+        let newTradedPrice = lastTradedPrice * (1.0 + change)
         return ManipulatedInstrument(ticker: ticker,
                                      name: name,
                                      exchange: exchange,
