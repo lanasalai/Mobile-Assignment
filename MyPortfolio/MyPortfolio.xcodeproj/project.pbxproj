@@ -48,6 +48,7 @@
 		D4C696692DAF0133006604BC /* RemotePortfolioDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696682DAF0133006604BC /* RemotePortfolioDataSourceTests.swift */; };
 		D4C6966C2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6966B2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift */; };
 		D4C6966E2DAF2296006604BC /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6966D2DAF2296006604BC /* SharedTestHelpers.swift */; };
+		D4C696712DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696702DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		D4C6966B2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		D4C6966D2DAF2296006604BC /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		D4C6966F2DAFB16A006604BC /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
+		D4C696702DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioSimulatedServicePublisherTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				D4C696682DAF0133006604BC /* RemotePortfolioDataSourceTests.swift */,
+				D4C696702DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C696712DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift in Sources */,
 				D4C696692DAF0133006604BC /* RemotePortfolioDataSourceTests.swift in Sources */,
 				D4C6966C2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				D4C6966E2DAF2296006604BC /* SharedTestHelpers.swift in Sources */,
