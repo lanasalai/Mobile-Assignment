@@ -7,7 +7,7 @@
 
 import Foundation
 
-func anyNSError() -> Error {
+func anyNSError() -> NSError {
     NSError(domain: "", code: 0)
 }
 
