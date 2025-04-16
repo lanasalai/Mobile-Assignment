@@ -71,7 +71,7 @@ final class RemotePortfolioDataSourceTests: XCTestCase {
         XCTAssertTrue(receivedResults.isEmpty)
     }
     
-    // MARK: Helpers
+    // MARK: - Helpers
     
     private struct Collaborators {
         let httpClient: HTTPClientSpy

@@ -54,7 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D4C695D82DAA866F006604BC /* PBXContainerItemProxy */ = {
+		D4C6967B2DB02EFE006604BC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D4C695B92DAA866D006604BC /* Project object */;
 			proxyType = 1;
@@ -409,7 +409,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D4C695D92DAA866F006604BC /* PBXTargetDependency */,
+				D4C6967C2DB02EFE006604BC /* PBXTargetDependency */,
 			);
 			name = MyPortfolioTests;
 			productName = MyPortfolioTests;
@@ -534,10 +534,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D4C695D92DAA866F006604BC /* PBXTargetDependency */ = {
+		D4C6967C2DB02EFE006604BC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D4C695C02DAA866D006604BC /* MyPortfolio */;
-			targetProxy = D4C695D82DAA866F006604BC /* PBXContainerItemProxy */;
+			targetProxy = D4C6967B2DB02EFE006604BC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

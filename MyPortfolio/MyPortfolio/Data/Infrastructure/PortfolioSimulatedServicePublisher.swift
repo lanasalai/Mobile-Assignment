@@ -14,7 +14,8 @@ class PortfolioSimulatedServicePublisher: PortfolioPublisher {
     private let subject = PassthroughSubject<ManipulatedPortfolio, Error>()
     private var cancellables = Set<AnyCancellable>()
     
-    init(dataSource: RemotePortfolioDataSource, simulationService: PercentagesSimulationService) {
+    init(dataSource: RemotePortfolioDataSource, 
+         simulationService: PercentagesSimulationService) {
         self.dataSource = dataSource
         self.simulationService = simulationService
     }
@@ -29,8 +30,10 @@ class PortfolioSimulatedServicePublisher: PortfolioPublisher {
             case let .success(remotePortfolio):
                 self.simulationService.generatePercentagesPublisher(count: remotePortfolio.positions.count)
                     .sink { percentages in
-                        let manipulatedPortfolio = remotePortfolio.manipulate(priceChanges: percentages)
-                        self.subject.send(manipulatedPortfolio)
+                        if percentages.count == remotePortfolio.positions.count {
+                            let manipulatedPortfolio = remotePortfolio.manipulate(priceChanges: percentages)
+                            self.subject.send(manipulatedPortfolio)
+                        }
                     }
                     .store(in: &cancellables)
             }
