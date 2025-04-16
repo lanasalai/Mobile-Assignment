@@ -1,0 +1,34 @@
+{
+  "configurations" : [
+    {
+      "id" : "192FFD4B-2E64-42B6-B622-5C58EDA6A28B",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:MyPortfolio.xcodeproj",
+          "identifier" : "D4C695C02DAA866D006604BC",
+          "name" : "MyPortfolio"
+        }
+      ]
+    },
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:MyPortfolio.xcodeproj",
+        "identifier" : "D4C695D62DAA866F006604BC",
+        "name" : "MyPortfolioTests"
+      }
+    }
+  ],
+  "version" : 1
+}
