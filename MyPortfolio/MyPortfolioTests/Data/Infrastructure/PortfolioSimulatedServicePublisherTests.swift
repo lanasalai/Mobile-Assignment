@@ -13,7 +13,9 @@ final class PortfolioSimulatedServicePublisherTests: XCTestCase {
     func test_fetchPortfolioPublisher_invokesDataSourceFetch() {
         let dataSourceSpy = RemotePortfolioDataSourceSpy()
         let sut = PortfolioSimulatedServicePublisher(dataSource: dataSourceSpy, 
-                                                     simulationService: PercentagesSimulationServiceStub())
+                                                     simulationService: PercentagesSimulationServiceSpy())
+        trackForMemoryLeaks(dataSourceSpy)
+        trackForMemoryLeaks(sut)
         
         _ = sut.fetchPortfolioPublisher()
         
@@ -23,7 +25,9 @@ final class PortfolioSimulatedServicePublisherTests: XCTestCase {
     func test_fetchPortfolioPublisher_failsOnDataSourceError() {
         let dataSourceSpy = RemotePortfolioDataSourceSpy()
         let sut = PortfolioSimulatedServicePublisher(dataSource: dataSourceSpy, 
-                                                     simulationService: PercentagesSimulationServiceStub())
+                                                     simulationService: PercentagesSimulationServiceSpy())
+        trackForMemoryLeaks(dataSourceSpy)
+        trackForMemoryLeaks(sut)
         let expectedError = anyNSError()
         let expectation = expectation(description: "Wait for completion")
         
@@ -51,6 +55,9 @@ final class PortfolioSimulatedServicePublisherTests: XCTestCase {
         let simulationServiceSpy = PercentagesSimulationServiceSpy()
         let sut = PortfolioSimulatedServicePublisher(dataSource: dataSourceStub,
                                                      simulationService: simulationServiceSpy)
+        trackForMemoryLeaks(dataSourceStub)
+        trackForMemoryLeaks(simulationServiceSpy)
+        trackForMemoryLeaks(sut)
         
         _ = sut.fetchPortfolioPublisher()
         
@@ -63,6 +70,9 @@ final class PortfolioSimulatedServicePublisherTests: XCTestCase {
         simulationServiceStub.stub = [0.1, -0.1]
         let sut = PortfolioSimulatedServicePublisher(dataSource: dataSourceSpy,
                                                      simulationService: simulationServiceStub)
+        trackForMemoryLeaks(dataSourceSpy)
+        trackForMemoryLeaks(simulationServiceStub)
+        trackForMemoryLeaks(sut)
         let expectation = expectation(description: "Wait for completion")
         
         let subscriber = sut.fetchPortfolioPublisher()
@@ -84,6 +94,18 @@ final class PortfolioSimulatedServicePublisherTests: XCTestCase {
         dataSourceSpy.complete(with: makeRemotePortfolio())
         subscriber.cancel()
         wait(for: [expectation], timeout: 1.0)
+    }
+    
+    func test_fetchPortfolioPublisher_doesNotCompleteWhenSUTnstanceIsDeallocated() {
+        let dataSourceSpy = RemotePortfolioDataSourceSpy()
+        let simulatedServiceSpy = PercentagesSimulationServiceSpy()
+        var sut: PortfolioSimulatedServicePublisher? = PortfolioSimulatedServicePublisher(dataSource: dataSourceSpy, simulationService: simulatedServiceSpy)
+        
+        _ = sut?.fetchPortfolioPublisher()
+        
+        sut = nil
+        dataSourceSpy.complete(with: makeRemotePortfolio())
+        XCTAssertTrue(simulatedServiceSpy.messages.isEmpty)
     }
     
     // MARK: - Helpers
