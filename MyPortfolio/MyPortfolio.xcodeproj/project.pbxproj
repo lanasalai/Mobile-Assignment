@@ -325,12 +325,9 @@
 		D4C696302DAAFB7A006604BC /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				D4C696382DAAFC77006604BC /* PortfolioSimulatedServicePublisher.swift */,
-				D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */,
-				D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */,
-				D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */,
+				D4C6969B2DB13D51006604BC /* ServicePublisher */,
+				D4C6969A2DB13D2E006604BC /* Remote */,
 				D4C6963E2DAB0A40006604BC /* PortfolioRepositoryImpl.swift */,
-				D4C696742DB003C2006604BC /* PercentagesSimulationServiceImpl.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -338,11 +335,11 @@
 		D4C696502DAD6AC4006604BC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				D4C6968A2DB059F2006604BC /* Coordinator */,
-				D4C6968E2DB05F81006604BC /* ViewModel */,
 				D4C696612DAEDFF6006604BC /* Helpers */,
-				D4C6965A2DAED3DB006604BC /* Model */,
+				D4C6968A2DB059F2006604BC /* Coordinator */,
 				D4C696532DAD7AEF006604BC /* UI */,
+				D4C6965A2DAED3DB006604BC /* Model */,
+				D4C6968E2DB05F81006604BC /* ViewModel */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -350,10 +347,8 @@
 		D4C696532DAD7AEF006604BC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D4C6969C2DB13D77006604BC /* CollectionView */,
 				D4C695C82DAA866D006604BC /* PortfolioViewController.swift */,
-				D4C696542DAD7B16006604BC /* PositionCell.swift */,
-				D4C696562DADA544006604BC /* CompositionalLayout.swift */,
-				D4C696582DADAC04006604BC /* HeaderView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -390,8 +385,8 @@
 			isa = PBXGroup;
 			children = (
 				D4C6967D2DB033A2006604BC /* Helpers */,
-				D4C696682DAF0133006604BC /* RemotePortfolioDataSourceTests.swift */,
-				D4C696702DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift */,
+				D4C6969E2DB13DD3006604BC /* ServicePublisher */,
+				D4C6969D2DB13DC9006604BC /* Remote */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -448,6 +443,51 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4C6969A2DB13D2E006604BC /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */,
+				D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */,
+				D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		D4C6969B2DB13D51006604BC /* ServicePublisher */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696742DB003C2006604BC /* PercentagesSimulationServiceImpl.swift */,
+				D4C696382DAAFC77006604BC /* PortfolioSimulatedServicePublisher.swift */,
+			);
+			path = ServicePublisher;
+			sourceTree = "<group>";
+		};
+		D4C6969C2DB13D77006604BC /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696562DADA544006604BC /* CompositionalLayout.swift */,
+				D4C696542DAD7B16006604BC /* PositionCell.swift */,
+				D4C696582DADAC04006604BC /* HeaderView.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		D4C6969D2DB13DC9006604BC /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696682DAF0133006604BC /* RemotePortfolioDataSourceTests.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		D4C6969E2DB13DD3006604BC /* ServicePublisher */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696702DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift */,
+			);
+			path = ServicePublisher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
