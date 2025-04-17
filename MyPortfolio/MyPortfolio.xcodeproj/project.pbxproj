@@ -60,6 +60,8 @@
 		D4C6968D2DB05A10006604BC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6968C2DB05A10006604BC /* Coordinator.swift */; };
 		D4C696912DB05FB4006604BC /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696902DB05FB4006604BC /* AppDependencies.swift */; };
 		D4C696932DB0602D006604BC /* PortfolioCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696922DB0602D006604BC /* PortfolioCoordinator.swift */; };
+		D4C696972DB06B69006604BC /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = D4C696962DB06B69006604BC /* DGCharts */; };
+		D4C696992DB10DB9006604BC /* ChartUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696982DB10DB9006604BC /* ChartUIModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +132,7 @@
 		D4C6968C2DB05A10006604BC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D4C696902DB05FB4006604BC /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		D4C696922DB0602D006604BC /* PortfolioCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCoordinator.swift; sourceTree = "<group>"; };
+		D4C696982DB10DB9006604BC /* ChartUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartUIModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C696972DB06B69006604BC /* DGCharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +160,7 @@
 				D4C695C32DAA866D006604BC /* MyPortfolio */,
 				D4C695DA2DAA866F006604BC /* MyPortfolioTests */,
 				D4C695C22DAA866D006604BC /* Products */,
+				D4C696952DB06B69006604BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -359,6 +364,7 @@
 				D4C6965B2DAED3F7006604BC /* PortfolioUIModel.swift */,
 				D4C6965D2DAED653006604BC /* BalanceUIModel.swift */,
 				D4C6965F2DAED67F006604BC /* PositionUIModel.swift */,
+				D4C696982DB10DB9006604BC /* ChartUIModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -437,6 +443,13 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
+		D4C696952DB06B69006604BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -453,6 +466,9 @@
 			dependencies = (
 			);
 			name = MyPortfolio;
+			packageProductDependencies = (
+				D4C696962DB06B69006604BC /* DGCharts */,
+			);
 			productName = MyPortfolio;
 			productReference = D4C695C12DAA866D006604BC /* MyPortfolio.app */;
 			productType = "com.apple.product-type.application";
@@ -504,6 +520,9 @@
 				Base,
 			);
 			mainGroup = D4C695B82DAA866D006604BC;
+			packageReferences = (
+				D4C696942DB06A82006604BC /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = D4C695C22DAA866D006604BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -552,6 +571,7 @@
 				D4C6961C2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift in Sources */,
 				D4C696772DB00A9C006604BC /* PercentagesSimulationService.swift in Sources */,
 				D4C696932DB0602D006604BC /* PortfolioCoordinator.swift in Sources */,
+				D4C696992DB10DB9006604BC /* ChartUIModel.swift in Sources */,
 				D4C696392DAAFC77006604BC /* PortfolioSimulatedServicePublisher.swift in Sources */,
 				D4C696632DAEE00D006604BC /* ColorsHelper.swift in Sources */,
 				D4C6961A2DAA9E64006604BC /* RemotePortfolioDataSource.swift in Sources */,
@@ -674,7 +694,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 14;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -731,7 +751,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -755,7 +775,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -787,7 +807,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -814,7 +834,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanasalai.MyPortfolioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -839,7 +859,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanasalai.MyPortfolioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -885,6 +905,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D4C696942DB06A82006604BC /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D4C696962DB06B69006604BC /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4C696942DB06A82006604BC /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D4C695B92DAA866D006604BC /* Project object */;
 }

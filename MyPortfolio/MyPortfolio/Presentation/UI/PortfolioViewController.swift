@@ -72,7 +72,8 @@ extension PortfolioViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.identifier, for: indexPath) as! HeaderView
-        header.configure(balance: viewModel.portfolio.balance)
+        header.configure(balance: viewModel.portfolio.balance, 
+                         chartModel: viewModel.portfolio.chartModel)
         return header
     }
 }
