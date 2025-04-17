@@ -31,7 +31,10 @@ class PortfolioViewModel {
 
 private extension Portfolio {
     func toUIModel() -> PortfolioUIModel {
-        PortfolioUIModel(balance: balance.toUIModel(), positions: positions.map { $0.toUIModel() })
+        let positionsUIModels = positions.map { $0.toUIModel() }
+        return PortfolioUIModel(balance: balance.toUIModel(), 
+                                positions: positionsUIModels,
+                                chartModel: ChartUIModel.create(from: positions))
     }
 }
 
