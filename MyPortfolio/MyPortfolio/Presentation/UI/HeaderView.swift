@@ -74,7 +74,8 @@ extension HeaderView {
     }
     
     private func configureChartWithModel(_ model: ChartUIModel) {
-        let dataSet = PieChartDataSet(entries: model.entries, label: "")
+        let entries = model.values.map { PieChartDataEntry(value: $0) }
+        let dataSet = PieChartDataSet(entries: entries, label: "")
         dataSet.colors = model.colors
         dataSet.drawValuesEnabled = false
         dataSet.sliceSpace = 2

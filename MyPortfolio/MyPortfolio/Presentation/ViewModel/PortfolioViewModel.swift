@@ -34,7 +34,8 @@ private extension Portfolio {
         let positionsUIModels = positions.map { $0.toUIModel() }
         return PortfolioUIModel(balance: balance.toUIModel(), 
                                 positions: positionsUIModels,
-                                chartModel: ChartUIModel.create(from: positions))
+                                chartModel: ChartUIModel(values: positions.map { $0.marketValue },
+                                                         colors: positionsUIModels.map { $0.color }))
     }
 }
 
