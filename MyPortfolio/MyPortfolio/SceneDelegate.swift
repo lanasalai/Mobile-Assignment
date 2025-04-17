@@ -16,6 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+#if DEBUG
+        // Short-circuit starting app if running unit tests
+        let isUnitTesting = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
+        guard !isUnitTesting else {
+            return
+        }
+#endif
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
@@ -23,7 +30,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //TODO: remove
         let dataSource = RemotePortfolioDataSourceImpl(httpClient: URLSessionHTTPClient(),
                                                        requestProvider: PortfolioURLRequestProvider(url: URL(string: "https://dummyjson.com/c/60b7-70a6-4ee3-bae8")!))
-        let servicePublisher = RemotePortfolioSimulatedServicePublisher(dataSource: dataSource)
+        let servicePublisher = PortfolioSimulatedServicePublisher(dataSource: dataSource, simulationService: PercentagesSimulationServiceImpl(generatePercentage: {
+            Bool.random() ? 0.1 : -0.1
+        }))
         let repository = PortfolioRepositoryImpl(service: servicePublisher)
         let useCase = ObserveSimulatedPortfolioUseCase(repository: repository)
         let viewModel = PortfolioViewModel(observePortfolioUseCase: useCase)

@@ -12,7 +12,6 @@
 		D4C695C92DAA866D006604BC /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C695C82DAA866D006604BC /* PortfolioViewController.swift */; };
 		D4C695CE2DAA866E006604BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C695CD2DAA866E006604BC /* Assets.xcassets */; };
 		D4C695D12DAA866E006604BC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D4C695D02DAA866E006604BC /* Base */; };
-		D4C695DC2DAA866F006604BC /* MyPortfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C695DB2DAA866F006604BC /* MyPortfolioTests.swift */; };
 		D4C696012DAA8E29006604BC /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696002DAA8E29006604BC /* HTTPClient.swift */; };
 		D4C696032DAA8EF0006604BC /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696022DAA8EF0006604BC /* URLSessionHTTPClient.swift */; };
 		D4C696122DAA9C0C006604BC /* RemotePortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696112DAA9C0C006604BC /* RemotePortfolio.swift */; };
@@ -23,14 +22,13 @@
 		D4C6961C2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */; };
 		D4C6961E2DAAAB6E006604BC /* URLRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6961D2DAAAB6E006604BC /* URLRequestProvider.swift */; };
 		D4C696222DAAACDC006604BC /* PortfolioURLRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */; };
-		D4C696242DAABC38006604BC /* RemotePortfolioPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696232DAABC38006604BC /* RemotePortfolioPublisher.swift */; };
+		D4C696242DAABC38006604BC /* PortfolioPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696232DAABC38006604BC /* PortfolioPublisher.swift */; };
 		D4C696282DAADD61006604BC /* ManipulatedPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696272DAADD61006604BC /* ManipulatedPortfolio.swift */; };
 		D4C6962A2DAAFAD9006604BC /* ManipulatedBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696292DAAFAD9006604BC /* ManipulatedBalance.swift */; };
 		D4C6962C2DAAFB18006604BC /* ManipulatedPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6962B2DAAFB18006604BC /* ManipulatedPosition.swift */; };
 		D4C6962E2DAAFB3B006604BC /* ManipulatedInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6962D2DAAFB3B006604BC /* ManipulatedInstrument.swift */; };
 		D4C696342DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */; };
-		D4C696372DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696362DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift */; };
-		D4C696392DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696382DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift */; };
+		D4C696392DAAFC77006604BC /* PortfolioSimulatedServicePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696382DAAFC77006604BC /* PortfolioSimulatedServicePublisher.swift */; };
 		D4C6963D2DAB0A1B006604BC /* PortfolioRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6963C2DAB0A1B006604BC /* PortfolioRepository.swift */; };
 		D4C6963F2DAB0A40006604BC /* PortfolioRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6963E2DAB0A40006604BC /* PortfolioRepositoryImpl.swift */; };
 		D4C696412DAB0EA5006604BC /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696402DAB0EA5006604BC /* Portfolio.swift */; };
@@ -47,10 +45,22 @@
 		D4C696602DAED67F006604BC /* PositionUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6965F2DAED67F006604BC /* PositionUIModel.swift */; };
 		D4C696632DAEE00D006604BC /* ColorsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696622DAEE00D006604BC /* ColorsHelper.swift */; };
 		D4C696652DAEF02F006604BC /* CurrencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696642DAEF02F006604BC /* CurrencyHelper.swift */; };
+		D4C696692DAF0133006604BC /* RemotePortfolioDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696682DAF0133006604BC /* RemotePortfolioDataSourceTests.swift */; };
+		D4C6966C2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6966B2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift */; };
+		D4C6966E2DAF2296006604BC /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6966D2DAF2296006604BC /* SharedTestHelpers.swift */; };
+		D4C696712DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696702DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift */; };
+		D4C696752DB003C2006604BC /* PercentagesSimulationServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696742DB003C2006604BC /* PercentagesSimulationServiceImpl.swift */; };
+		D4C696772DB00A9C006604BC /* PercentagesSimulationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696762DB00A9C006604BC /* PercentagesSimulationService.swift */; };
+		D4C6967F2DB033C7006604BC /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6967E2DB033C7006604BC /* HTTPClientSpy.swift */; };
+		D4C696812DB03423006604BC /* PortfolioRequestProviderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696802DB03423006604BC /* PortfolioRequestProviderStub.swift */; };
+		D4C696832DB03476006604BC /* RemotePortfolioDataSourceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696822DB03476006604BC /* RemotePortfolioDataSourceSpy.swift */; };
+		D4C696852DB034A4006604BC /* RemotePortfolioDataSourceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696842DB034A4006604BC /* RemotePortfolioDataSourceStub.swift */; };
+		D4C696872DB034C4006604BC /* PercentagesSimulationServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696862DB034C4006604BC /* PercentagesSimulationServiceSpy.swift */; };
+		D4C696892DB034ED006604BC /* PercentagesSimulationServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C696882DB034ED006604BC /* PercentagesSimulationServiceStub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D4C695D82DAA866F006604BC /* PBXContainerItemProxy */ = {
+		D4C6967B2DB02EFE006604BC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D4C695B92DAA866D006604BC /* Project object */;
 			proxyType = 1;
@@ -68,7 +78,6 @@
 		D4C695D02DAA866E006604BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4C695D22DAA866E006604BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4C695D72DAA866F006604BC /* MyPortfolioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPortfolioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4C695DB2DAA866F006604BC /* MyPortfolioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioTests.swift; sourceTree = "<group>"; };
 		D4C696002DAA8E29006604BC /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D4C696022DAA8EF0006604BC /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		D4C696112DAA9C0C006604BC /* RemotePortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolio.swift; sourceTree = "<group>"; };
@@ -79,14 +88,13 @@
 		D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioResponseMapper.swift; sourceTree = "<group>"; };
 		D4C6961D2DAAAB6E006604BC /* URLRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestProvider.swift; sourceTree = "<group>"; };
 		D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioURLRequestProvider.swift; sourceTree = "<group>"; };
-		D4C696232DAABC38006604BC /* RemotePortfolioPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioPublisher.swift; sourceTree = "<group>"; };
+		D4C696232DAABC38006604BC /* PortfolioPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioPublisher.swift; sourceTree = "<group>"; };
 		D4C696272DAADD61006604BC /* ManipulatedPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulatedPortfolio.swift; sourceTree = "<group>"; };
 		D4C696292DAAFAD9006604BC /* ManipulatedBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulatedBalance.swift; sourceTree = "<group>"; };
 		D4C6962B2DAAFB18006604BC /* ManipulatedPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulatedPosition.swift; sourceTree = "<group>"; };
 		D4C6962D2DAAFB3B006604BC /* ManipulatedInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManipulatedInstrument.swift; sourceTree = "<group>"; };
 		D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioDataSourceImpl.swift; sourceTree = "<group>"; };
-		D4C696362DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioSimplePublisher.swift; sourceTree = "<group>"; };
-		D4C696382DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioSimulatedServicePublisher.swift; sourceTree = "<group>"; };
+		D4C696382DAAFC77006604BC /* PortfolioSimulatedServicePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioSimulatedServicePublisher.swift; sourceTree = "<group>"; };
 		D4C6963C2DAB0A1B006604BC /* PortfolioRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioRepository.swift; sourceTree = "<group>"; };
 		D4C6963E2DAB0A40006604BC /* PortfolioRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioRepositoryImpl.swift; sourceTree = "<group>"; };
 		D4C696402DAB0EA5006604BC /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
@@ -103,6 +111,19 @@
 		D4C6965F2DAED67F006604BC /* PositionUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionUIModel.swift; sourceTree = "<group>"; };
 		D4C696622DAEE00D006604BC /* ColorsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsHelper.swift; sourceTree = "<group>"; };
 		D4C696642DAEF02F006604BC /* CurrencyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyHelper.swift; sourceTree = "<group>"; };
+		D4C696682DAF0133006604BC /* RemotePortfolioDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioDataSourceTests.swift; sourceTree = "<group>"; };
+		D4C6966B2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		D4C6966D2DAF2296006604BC /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
+		D4C6966F2DAFB16A006604BC /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
+		D4C696702DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioSimulatedServicePublisherTests.swift; sourceTree = "<group>"; };
+		D4C696742DB003C2006604BC /* PercentagesSimulationServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentagesSimulationServiceImpl.swift; sourceTree = "<group>"; };
+		D4C696762DB00A9C006604BC /* PercentagesSimulationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentagesSimulationService.swift; sourceTree = "<group>"; };
+		D4C6967E2DB033C7006604BC /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
+		D4C696802DB03423006604BC /* PortfolioRequestProviderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioRequestProviderStub.swift; sourceTree = "<group>"; };
+		D4C696822DB03476006604BC /* RemotePortfolioDataSourceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioDataSourceSpy.swift; sourceTree = "<group>"; };
+		D4C696842DB034A4006604BC /* RemotePortfolioDataSourceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePortfolioDataSourceStub.swift; sourceTree = "<group>"; };
+		D4C696862DB034C4006604BC /* PercentagesSimulationServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentagesSimulationServiceSpy.swift; sourceTree = "<group>"; };
+		D4C696882DB034ED006604BC /* PercentagesSimulationServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentagesSimulationServiceStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +181,9 @@
 		D4C695DA2DAA866F006604BC /* MyPortfolioTests */ = {
 			isa = PBXGroup;
 			children = (
-				D4C695DB2DAA866F006604BC /* MyPortfolioTests.swift */,
+				D4C6966F2DAFB16A006604BC /* TestPlan.xctestplan */,
+				D4C6966A2DAF2048006604BC /* Helpers */,
+				D4C696662DAF0106006604BC /* Data */,
 			);
 			path = MyPortfolioTests;
 			sourceTree = "<group>";
@@ -281,7 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				D4C696192DAA9E64006604BC /* RemotePortfolioDataSource.swift */,
-				D4C696232DAABC38006604BC /* RemotePortfolioPublisher.swift */,
+				D4C696232DAABC38006604BC /* PortfolioPublisher.swift */,
+				D4C696762DB00A9C006604BC /* PercentagesSimulationService.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -289,22 +313,14 @@
 		D4C696302DAAFB7A006604BC /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				D4C696352DAAFC22006604BC /* Publishers */,
+				D4C696382DAAFC77006604BC /* PortfolioSimulatedServicePublisher.swift */,
 				D4C696212DAAACDC006604BC /* PortfolioURLRequestProvider.swift */,
 				D4C696332DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift */,
 				D4C6961B2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift */,
 				D4C6963E2DAB0A40006604BC /* PortfolioRepositoryImpl.swift */,
+				D4C696742DB003C2006604BC /* PercentagesSimulationServiceImpl.swift */,
 			);
 			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		D4C696352DAAFC22006604BC /* Publishers */ = {
-			isa = PBXGroup;
-			children = (
-				D4C696362DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift */,
-				D4C696382DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift */,
-			);
-			path = Publishers;
 			sourceTree = "<group>";
 		};
 		D4C696502DAD6AC4006604BC /* Presentation */ = {
@@ -348,6 +364,46 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		D4C696662DAF0106006604BC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D4C696672DAF010C006604BC /* Infrastructure */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D4C696672DAF010C006604BC /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				D4C6967D2DB033A2006604BC /* Helpers */,
+				D4C696682DAF0133006604BC /* RemotePortfolioDataSourceTests.swift */,
+				D4C696702DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		D4C6966A2DAF2048006604BC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D4C6966B2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift */,
+				D4C6966D2DAF2296006604BC /* SharedTestHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D4C6967D2DB033A2006604BC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D4C6967E2DB033C7006604BC /* HTTPClientSpy.swift */,
+				D4C696802DB03423006604BC /* PortfolioRequestProviderStub.swift */,
+				D4C696822DB03476006604BC /* RemotePortfolioDataSourceSpy.swift */,
+				D4C696842DB034A4006604BC /* RemotePortfolioDataSourceStub.swift */,
+				D4C696862DB034C4006604BC /* PercentagesSimulationServiceSpy.swift */,
+				D4C696882DB034ED006604BC /* PercentagesSimulationServiceStub.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -379,7 +435,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D4C695D92DAA866F006604BC /* PBXTargetDependency */,
+				D4C6967C2DB02EFE006604BC /* PBXTargetDependency */,
 			);
 			name = MyPortfolioTests;
 			productName = MyPortfolioTests;
@@ -401,6 +457,7 @@
 					};
 					D4C695D62DAA866F006604BC = {
 						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 						TestTargetID = D4C695C02DAA866D006604BC;
 					};
 				};
@@ -458,11 +515,12 @@
 				D4C696142DAA9DE7006604BC /* RemoteBalance.swift in Sources */,
 				D4C6965E2DAED653006604BC /* BalanceUIModel.swift in Sources */,
 				D4C6961C2DAAA8A6006604BC /* RemotePortfolioResponseMapper.swift in Sources */,
-				D4C696392DAAFC77006604BC /* RemotePortfolioSimulatedServicePublisher.swift in Sources */,
+				D4C696772DB00A9C006604BC /* PercentagesSimulationService.swift in Sources */,
+				D4C696392DAAFC77006604BC /* PortfolioSimulatedServicePublisher.swift in Sources */,
 				D4C696632DAEE00D006604BC /* ColorsHelper.swift in Sources */,
 				D4C6961A2DAA9E64006604BC /* RemotePortfolioDataSource.swift in Sources */,
 				D4C696652DAEF02F006604BC /* CurrencyHelper.swift in Sources */,
-				D4C696242DAABC38006604BC /* RemotePortfolioPublisher.swift in Sources */,
+				D4C696242DAABC38006604BC /* PortfolioPublisher.swift in Sources */,
 				D4C6963D2DAB0A1B006604BC /* PortfolioRepository.swift in Sources */,
 				D4C6963F2DAB0A40006604BC /* PortfolioRepositoryImpl.swift in Sources */,
 				D4C696572DADA544006604BC /* CompositionalLayout.swift in Sources */,
@@ -473,7 +531,6 @@
 				D4C696182DAA9E20006604BC /* RemoteInstrument.swift in Sources */,
 				D4C696432DAB0EAF006604BC /* Balance.swift in Sources */,
 				D4C6962C2DAAFB18006604BC /* ManipulatedPosition.swift in Sources */,
-				D4C696372DAAFC41006604BC /* RemotePortfolioSimplePublisher.swift in Sources */,
 				D4C696342DAAFBE0006604BC /* RemotePortfolioDataSourceImpl.swift in Sources */,
 				D4C696452DAB0EB7006604BC /* Position.swift in Sources */,
 				D4C696012DAA8E29006604BC /* HTTPClient.swift in Sources */,
@@ -483,6 +540,7 @@
 				D4C696522DAD6D3F006604BC /* PortfolioViewModel.swift in Sources */,
 				D4C696472DAB0EC1006604BC /* Instrument.swift in Sources */,
 				D4C696492DAC3063006604BC /* ObserveSimulatedPortfolioUseCase.swift in Sources */,
+				D4C696752DB003C2006604BC /* PercentagesSimulationServiceImpl.swift in Sources */,
 				D4C6962A2DAAFAD9006604BC /* ManipulatedBalance.swift in Sources */,
 				D4C6965C2DAED3F7006604BC /* PortfolioUIModel.swift in Sources */,
 			);
@@ -492,17 +550,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4C695DC2DAA866F006604BC /* MyPortfolioTests.swift in Sources */,
+				D4C696712DAFB35D006604BC /* PortfolioSimulatedServicePublisherTests.swift in Sources */,
+				D4C696852DB034A4006604BC /* RemotePortfolioDataSourceStub.swift in Sources */,
+				D4C696692DAF0133006604BC /* RemotePortfolioDataSourceTests.swift in Sources */,
+				D4C6966C2DAF205E006604BC /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				D4C6966E2DAF2296006604BC /* SharedTestHelpers.swift in Sources */,
+				D4C696812DB03423006604BC /* PortfolioRequestProviderStub.swift in Sources */,
+				D4C6967F2DB033C7006604BC /* HTTPClientSpy.swift in Sources */,
+				D4C696872DB034C4006604BC /* PercentagesSimulationServiceSpy.swift in Sources */,
+				D4C696892DB034ED006604BC /* PercentagesSimulationServiceStub.swift in Sources */,
+				D4C696832DB03476006604BC /* RemotePortfolioDataSourceSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D4C695D92DAA866F006604BC /* PBXTargetDependency */ = {
+		D4C6967C2DB02EFE006604BC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D4C695C02DAA866D006604BC /* MyPortfolio */;
-			targetProxy = D4C695D82DAA866F006604BC /* PBXContainerItemProxy */;
+			targetProxy = D4C6967B2DB02EFE006604BC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -571,7 +638,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -628,7 +695,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -652,7 +719,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -684,7 +751,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -707,10 +774,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanasalai.MyPortfolioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -719,6 +787,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyPortfolio.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyPortfolio";
@@ -730,10 +799,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanasalai.MyPortfolioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

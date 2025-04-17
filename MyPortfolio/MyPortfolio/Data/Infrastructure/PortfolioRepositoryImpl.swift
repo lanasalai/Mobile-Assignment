@@ -8,9 +8,9 @@
 import Combine
 
 class PortfolioRepositoryImpl: PortfolioRepository {
-    private let service: RemotePortfolioPublisher
+    private let service: PortfolioPublisher
     
-    init(service: RemotePortfolioPublisher) {
+    init(service: PortfolioPublisher) {
         self.service = service
     }
     
