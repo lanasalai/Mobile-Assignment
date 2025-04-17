@@ -1,0 +1,80 @@
+//
+//  PortfolioViewController.swift
+//  MyPortfolio
+//
+//  Created by Lana Salai on 12.4.25..
+//
+
+import UIKit
+import Combine
+
+class PortfolioViewController: UIViewController {
+    private let viewModel: PortfolioViewModel
+    private var collectionView: UICollectionView!
+    private var cancellables = Set<AnyCancellable>()
+    
+    init(viewModel: PortfolioViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Not implemented")
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = MyColor.primaryBackground
+        setupCollectionView()
+        viewModel.$portfolio
+            .sink { [weak self] _ in
+                self?.collectionView.reloadData()
+            }
+            .store(in: &cancellables)
+        viewModel.startObserving()
+    }
+    
+    private func setupCollectionView() {
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
+        collectionView.backgroundColor = .clear
+        collectionView.dataSource = self
+        collectionView.register(PositionCell.self, forCellWithReuseIdentifier: PositionCell.identifier)
+        collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.identifier)
+        view.addSubview(collectionView)
+    }
+    
+    private func createLayout() -> UICollectionViewCompositionalLayout {
+        let item = CompositionalLayout.item(width: .fractionalWidth(1), height: .fractionalHeight(1), spacing: 2)
+        let group = CompositionalLayout.verticalGroup(width: .fractionalWidth(1), height: .estimated(80), item: item, count: 1)
+        let section = NSCollectionLayoutSection(group: group)
+        
+        let header = CompositionalLayout.header(width: .fractionalWidth(1), height: .absolute(300))
+        section.boundarySupplementaryItems = [header]
+        
+        return UICollectionViewCompositionalLayout(section: section)
+    }
+}
+
+extension PortfolioViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel.portfolio.positions.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PositionCell.identifier, for: indexPath) as! PositionCell
+        cell.configure(position: viewModel.portfolio.positions[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.identifier, for: indexPath) as! HeaderView
+        header.configure(balance: viewModel.portfolio.balance, 
+                         chartModel: viewModel.portfolio.chartModel)
+        return header
+    }
+}
+
